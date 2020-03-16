@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'UMGC-City-webclient';
+  title = 'UMGC City Admin Portal';
 }
