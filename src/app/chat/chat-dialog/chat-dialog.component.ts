@@ -16,6 +16,11 @@ export class ChatDialogComponent implements OnInit {
 
   // Random session ID 
   sessionId = Math.random().toString(36).slice(-5);
+
+  //Getting the current date and time
+  todayNumber: number = Date.now();
+  todayDate : Date = new Date();
+  todayString : string = new Date().toDateString();
   
   messages: Observable<Message[]>;
   formValue: string;
@@ -23,8 +28,8 @@ export class ChatDialogComponent implements OnInit {
   }
 
   ngOnInit() {
-    //this.chat.talk();
-    //appends to array after each new message is added to source
+
+  //appends to array after each new message is added to source
     this.messages = this.chat.conversation.asObservable()
      .pipe(
            scan((acc, val) => acc.concat(val))

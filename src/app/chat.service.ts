@@ -37,11 +37,7 @@ export class ChatService {
       const botMessage = new Message(speech, 'bot');
       this.update(botMessage);
     });
-  }/* 
-  talk(){
-   this.client.textRequest('what is eup?')
-    .then(res => console.log(res));
-  } */
+  }
   
   
 }

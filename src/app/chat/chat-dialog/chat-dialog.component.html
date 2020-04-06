@@ -1,4 +1,3 @@
-<p>chat dialog works!</p>
 
           <button class="chatbox-open">
                 <i class="fa fa-comment fa-2x" aria-hidden="true"></i>
@@ -18,15 +17,16 @@
                   <button class="chatbox-maximize"><i class="fa fa-window-maximize" aria-hidden="true"></i></button>
                 </aside>
               </header>
-              <main class="chatbox-popup__main class mCustomScrollBox mCS-light mCSB_vertical mCSB_inside">
+              <main class="chatbox-popup__main class mCS-light mCSB_vertical mCSB_inside">
                     We make it simple and seamless,<br> you may ask anything,<br> and we have the answer.
                     <h1>----------------------------------</h1>
-                  <div class="messages">
+                  <div class="messages scroll">
                   <ng-container *ngFor="let msg of messages | async">
-                    <div class="msg" [ngClass]="{'from': msg.sentBy === 'bot', 
-                                                   'to': msg.sentBy === 'user' }"> 
+                    <div class="msg" [ngClass]="{'bot': msg.sentBy === 'bot', 
+                                                   'user': msg.sentBy === 'user' }"> 
                      {{ msg.content }}
                     </div>
+                    <p class="time right">{{todayDate | date:'short'}}</p>
                   </ng-container>
                   </div>
               </main>
@@ -35,7 +35,7 @@
                   <textarea [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text" class="message-input" placeholder="Type your message here..."  autofocus></textarea>
                 </aside>
                 <aside style="flex:1;color:rgb(11, 141, 228);text-align:right">
-                    <button type="submit" (click)="sendMessage()">Send</button>
+                    <button class="fa fa-microphone" type="submit" (click)="sendMessage()"></button>
                 </aside> 
               </footer>
             </section>
@@ -52,15 +52,16 @@
                   <button class="chatbox-panel-close"><i class="fa fa-close" aria-hidden="true"></i></button>
                 </aside>
               </header>
-              <main class="chatbox-panel__main mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="flex:1">
+              <main class="chatbox-panel__main mCS-light mCSB_vertical mCSB_inside" style="flex:1">
                     We make it simple and seamless,<br> you may ask anything,<br> and we have the answer.
                     <h1>----------------------------------</h1>
-                  <div class="messages">
+                  <div class="messages scroll">
                   <ng-container *ngFor="let msg of messages | async">
-                    <div class="msg" [ngClass]="{'from': msg.sentBy === 'bot', 
-                                                   'to': msg.sentBy === 'user' }"> 
+                    <div class="msg" [ngClass]="{'bot': msg.sentBy === 'bot', 
+                                                   'user': msg.sentBy === 'user' }"> 
                      {{ msg.content }}
                     </div>
+                    <p class="time right">{{todayDate | date:'short'}}</p>
                   </ng-container>
                   </div>
               </main>
@@ -70,7 +71,7 @@
                   <textarea [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text" class="message-input" placeholder="Type your message here..."  autofocus></textarea>
                 </aside>
                 <aside style="flex:1;color:rgb(11, 141, 228);text-align:right">
-                    <button type="submit" (click)="sendMessage()">Send</button>
+                    <button class="fa fa-microphone" type="submit" (click)="sendMessage()"></button>
                 </aside> 
               </footer>
             </section>

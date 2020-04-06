@@ -20,7 +20,10 @@
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
     "api-ai-javascript": "^2.0.0-beta.21",
+    "apiai": "^4.0.3",
+    "express": "^4.17.1",
     "rxjs": "~6.4.0",
+    "socket.io": "^2.3.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
@@ -44,5 +47,18 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umgc/umgc.city.frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/umgc/umgc.city.frontend/issues"
+  },
+  "homepage": "https://github.com/umgc/umgc.city.frontend#readme"
 }
