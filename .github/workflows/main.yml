@@ -36,7 +36,11 @@ jobs:
       
     - run: npm ci
     - run: npm run test
-        
+    
+    - name: fix code coverage paths
+      working-directory: ./coverage
+      run: sed -i 's/\/home\/runner\/work\/umgc.city.frontend\/umgc.city.frontend\//\/github\/workspace\//g' lcov.info
+      
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@v1.1
       env:
