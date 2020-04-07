@@ -34,9 +34,8 @@ jobs:
     - name: Use Node.js 
       uses: actions/setup-node@v1
       
-    - run: |
-        npm ci
-        npm run test
+    - run: npm ci
+    - run: npm run test
         
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@v1.1
