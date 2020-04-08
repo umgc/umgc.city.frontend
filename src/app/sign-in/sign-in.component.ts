@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { NavComponent} from "../nav/nav.component";
 import { FooterComponent} from "../footer/footer.component";
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-sign-in',
