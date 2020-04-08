@@ -47,20 +47,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.CITY_FRONTEND_SONAR }}
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    if: contains(github.ref, v*)
-    
-    steps:
-      - uses: actions/checkout@master
-      - name: Publish to Registry
-        uses: HurricanKai/Publish-Docker-Github-Action@master
-        with:
-          name: myDocker/repository
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-
     
     
     
