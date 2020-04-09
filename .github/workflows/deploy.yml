@@ -14,7 +14,6 @@ on:
 jobs:
   deploy-docker:
       if: contains(github.ref, 'refs/tags/v')
-      needs: build
       runs-on: ubuntu-latest    
       steps:
       - uses: actions/checkout@master
@@ -28,7 +27,6 @@ jobs:
        
   deploy-heroku:
         if: contains(github.ref, 'refs/tags/v')
-        needs: build
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v1
