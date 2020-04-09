@@ -1,3 +1,5 @@
+![UMGC FRONTEND CI](https://github.com/umgc-capstone-bot/umgc.city.frontend/workflows/UMGC%20FRONTEND%20CI/badge.svg)
+
 # UMGCCityWebclient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.

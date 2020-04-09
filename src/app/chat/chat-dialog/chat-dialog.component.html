@@ -1,0 +1,76 @@
+<p>chat dialog works!</p>
+
+          <button class="chatbox-open">
+                <i class="fa fa-comment fa-2x" aria-hidden="true"></i>
+            </button>
+            <button class="chatbox-close">
+                <i class="fa fa-close fa-2x" aria-hidden="true"></i>
+            </button>
+            <section class="chatbox-popup">
+              <header class="chatbox-popup__header">
+                <aside style="flex:3">
+                  <i class="fa fa-user-circle fa-4x chatbox-popup__avatar" aria-hidden="true"></i>
+                </aside>
+                <aside style="flex:6; align-content:center;">
+                        <h1>City of Pasadena</h1><br>Chat with Us
+                </aside>
+                <aside style="flex:1">
+                  <button class="chatbox-maximize"><i class="fa fa-window-maximize" aria-hidden="true"></i></button>
+                </aside>
+              </header>
+              <main class="chatbox-popup__main class mCustomScrollBox mCS-light mCSB_vertical mCSB_inside">
+                    We make it simple and seamless,<br> you may ask anything,<br> and we have the answer.
+                    <h1>----------------------------------</h1>
+                  <div class="messages">
+                  <ng-container *ngFor="let msg of messages | async">
+                    <div class="msg" [ngClass]="{'from': msg.sentBy === 'bot', 
+                                                   'to': msg.sentBy === 'user' }"> 
+                     {{ msg.content }}
+                    </div>
+                  </ng-container>
+                  </div>
+              </main>
+              <footer class="chatbox-popup__footer">
+                <aside style="flex:10">
+                  <textarea [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text" class="message-input" placeholder="Type your message here..."  autofocus></textarea>
+                </aside>
+                <aside style="flex:1;color:rgb(11, 141, 228);text-align:right">
+                    <button type="submit" (click)="sendMessage()">Send</button>
+                </aside> 
+              </footer>
+            </section>
+            <section class="chatbox-panel">
+              <header class="chatbox-panel__header">
+                <aside style="flex:3">
+                  <i class="fa fa-user-circle fa-3x chatbox-popup__avatar" aria-hidden="true"></i>
+                </aside>
+                <aside style="flex:6; align-content:center;">
+                        <h1>City of Pasadena</h1><br>Chat with Us
+                </aside>
+                <aside style="flex:3;text-align:right;">
+                  <button class="chatbox-minimize"><i class="fa fa-window-restore" aria-hidden="true"></i></button>
+                  <button class="chatbox-panel-close"><i class="fa fa-close" aria-hidden="true"></i></button>
+                </aside>
+              </header>
+              <main class="chatbox-panel__main mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="flex:1">
+                    We make it simple and seamless,<br> you may ask anything,<br> and we have the answer.
+                    <h1>----------------------------------</h1>
+                  <div class="messages">
+                  <ng-container *ngFor="let msg of messages | async">
+                    <div class="msg" [ngClass]="{'from': msg.sentBy === 'bot', 
+                                                   'to': msg.sentBy === 'user' }"> 
+                     {{ msg.content }}
+                    </div>
+                  </ng-container>
+                  </div>
+              </main>
+              <footer class="chatbox-panel__footer">
+                
+                <aside style="flex:10">
+                  <textarea [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text" class="message-input" placeholder="Type your message here..."  autofocus></textarea>
+                </aside>
+                <aside style="flex:1;color:rgb(11, 141, 228);text-align:right">
+                    <button type="submit" (click)="sendMessage()">Send</button>
+                </aside> 
+              </footer>
+            </section>
