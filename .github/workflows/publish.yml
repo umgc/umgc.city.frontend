@@ -18,7 +18,7 @@ jobs:
         if: contains(github.ref, 'refs/tags/v')
         with:
           name: umgccaps/umgc.city.frontend
-          username: ${{ secrets.DOCKER_USERNAME }}
+          username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           tagging: true
       - name: Deploy to Heroku
