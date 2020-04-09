@@ -49,7 +49,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.CITY_FRONTEND_SONAR }}
 
-  deploy:
+  deploy-docker:
       if: contains(github.ref, 'refs/tags/v')
       needs: build
       runs-on: ubuntu-latest    
@@ -62,11 +62,25 @@ jobs:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           tagging: true
-      - name: Deploy to Heroku
-        env:
-          HEROKU_API_TOKEN: ${{ secrets.HEROKU_API_TOKEN }}
-          HEROKU_APP_NAME: "app-umgc-city"
-        run: git push https://heroku:$HEROKU_API_TOKEN@git.heroku.com/$HEROKU_APP_NAME.git origin/master:master
-    
+       
+  deploy-heroku:
+        if: contains(github.ref, 'refs/tags/v')
+        needs: build
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v1
+        - name: Login to Heroku Container registry
+          env: 
+            HEROKU_API_KEY: ${{ secrets.HEROKU_API_TOKEN }}
+            HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
+          run: heroku container:login 
+        - name: Build and push
+          env:
+            HEROKU_API_KEY: ${{ secrets.HEROKU_API_TOKEN }}
+          run: heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web 
+        - name: Release
+          env:
+            HEROKU_API_KEY: ${{ secrets.HEROKU_API_TOKEN }}
+          run: heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web 
     
     
