@@ -48,9 +48,10 @@ jobs:
         SONAR_TOKEN: ${{ secrets.CITY_FRONTEND_SONAR }}
 
   deploy:
-    #if: contains(github.ref, 'refs/tags/v')
-    runs-on: ubuntu-latest    
-    steps:
+      if: contains(github.ref, 'refs/tags/v')
+      needs: build
+      runs-on: ubuntu-latest    
+      steps:
       - uses: actions/checkout@master
       - name: Publish to Registry
         uses: HurricanKai/Publish-Docker-Github-Action@master
