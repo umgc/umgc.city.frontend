@@ -1,3 +1,5 @@
+![Test/Deploy UMGC City Web](https://github.com/umgc/umgc.city.frontend/workflows/Test/Deploy%20UMGC%20City%20Web/badge.svg)
+
 # UMGC City Web App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.
