@@ -1,8 +1,23 @@
-# UMGCCityWebclient
+# UMGC City Web App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.
 
-## Development server
+## Test and Staging
+
+The application has automated testing hosted through Github Actions ... see .github/workflows for workflow actions.
+
+For Code Coverage Report view the [Sonar Dashboard](https://sonarcloud.io/dashboard?id=umgc_umgc.city.frontend)
+
+The project is stage at [UMGC Web Staging](https://appdev-umgc-cityweb.herokuapp.com/)
+
+## Publishing and Storage
+
+Merging to the release branch with a version tag:
+
+stores the image to the [Capstone DockerHub](https://hub.docker.com/u/umgccaps)
+publishes the application to the [UMGC Web Production](https://app-umgc-city-web.herokuapp.com/)
+
+## Local Development Server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
