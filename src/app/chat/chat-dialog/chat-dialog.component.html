@@ -27,7 +27,7 @@
     you may ask anything,<br />
     and we have the answer.
     <h1>----------------------------------</h1>
-    <div class="messages scroll">
+    <div class="messages scroll" #scrollMe [scrollTop]="scrollMe.scrollHeight">
       <ng-container *ngFor="let msg of messages | async">
         <div
           class="msg"
@@ -88,7 +88,7 @@
     you may ask anything,<br />
     and we have the answer.
     <h1>----------------------------------</h1>
-    <div class="messages scroll">
+    <div class="messages scroll"#scrollMeMaximize [scrollTop]="scrollMeMaximize.scrollHeight">
       <ng-container *ngFor="let msg of messages | async">
         <div
           class="msg"
