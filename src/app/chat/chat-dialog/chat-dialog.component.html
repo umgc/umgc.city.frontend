@@ -33,7 +33,7 @@
           class="msg"
           [ngClass]="{ bot: msg.sentBy === 'bot', user: msg.sentBy === 'user' }"
         >
-          {{ msg.content }}
+        <div innerHTML="{{ msg.content }}"></div>
         </div>
         <p class="time right">{{ todayDate | date: "short" }}</p>
       </ng-container>
@@ -94,7 +94,7 @@
           class="msg"
           [ngClass]="{ bot: msg.sentBy === 'bot', user: msg.sentBy === 'user' }"
         >
-          {{ msg.content }}
+        <div innerHTML="{{ msg.content }}"></div>
         </div>
         <p class="time right">{{ todayDate | date: "short" }}</p>
       </ng-container>
