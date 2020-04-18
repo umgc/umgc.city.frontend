@@ -1,26 +1,47 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SignInComponent } from './sign-in/sign-in.component';
-import { HomeComponent} from "./home/home.component";
+import { SignInComponent } from './pages/sign-in/sign-in.component';
+import { HomeComponent} from "./pages/home/home.component";
 import {BrowserModule} from "@angular/platform-browser";
-import {SignUpComponent} from "./sign-up/sign-up.component";
-import {UploadUsecaseComponent} from "./upload-usecase/upload-usecase.component";
+import {SignUpComponent} from "./pages/sign-up/sign-up.component";
+import {UploadUsecaseComponent} from "./pages/upload-usecase/upload-usecase.component";
 import {HelpComponent} from "./help/help.component";
-import {NewUsecaseComponent} from "./new-usecase/new-usecase.component";
-import {WelcomeComponent} from "./welcome/welcome.component";
+import {NewUsecaseComponent} from "./pages/new-usecase/new-usecase.component";
+import {WelcomeComponent} from "./pages/welcome/welcome.component";
+import {PasadenaMapComponent} from "./pages/pasadena-map/pasadena-map.component";
+import { PasadenaLayoutComponent } from './layout/pasadena/pasadena-layout/pasadena-layout.component';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { AuthorizedLayoutComponent } from './layout/authorized/authorized-layout/authorized-layout.component';
 
 
 const routes: Routes = [
-  // tells the router to always show the home component by default
-  { path: '', redirectTo: '/Home', pathMatch: 'full' },
-  { path: 'Sign-In', component: SignInComponent },
-  {path: 'Sign-Up', component: SignUpComponent},
-  { path: 'Home', component: HomeComponent},
-  { path: 'Upload Use Case', component: UploadUsecaseComponent},
-  { path: 'Help', component: HelpComponent},
-  { path: 'New Use Case', component: NewUsecaseComponent},
-  {path: 'Welcome', component: WelcomeComponent}
+  { 
+    path: '',
+    component: PasadenaLayoutComponent,
+    children: [
+      { path: '', component: LandingPageComponent, pathMatch: 'full'},
+    ]
+  },
+  {
+    path: '',
+    component: AuthorizedLayoutComponent,
+    children: [
+      { path: 'home', component: HomeComponent},
+      { path: 'signin', component: SignInComponent },
+      { path: 'signup', component: SignUpComponent},
+      { path: 'usecase/upload', component: UploadUsecaseComponent},
+      { path: 'help', component: HelpComponent},
+      { path: 'usecase/new', component: NewUsecaseComponent},
+      { path: 'welcome', component: WelcomeComponent}
+    ]
+  }
+
+
 ];
+  
+
+  
+
 
 @NgModule({
   imports: [
