@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "UMGC-City-webclient"
+  "defaultProject": "UMGC-City-webclient",
+  "cli": {
+    "analytics": "e193cc4d-13cc-48ff-bcb0-9e1c63876179"
+  }
 }

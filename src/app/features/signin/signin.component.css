@@ -1,0 +1,32 @@
+form {
+  margin: auto;
+  width: 50%;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+span {
+  float: right;
+}
+
+.btn-primary {
+  background-color: maroon;
+  color: gold;
+}
+
+.btn-warning {
+  background-color: gold;
+  color: maroon;
+}
+
+label {
+  font-weight: bold;
+}
+
+.jumbotron {
+  background-color: maroon;
+  color: gold;
+}

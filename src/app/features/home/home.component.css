@@ -1,0 +1,45 @@
+.body {
+  background-color: maroon;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+.jumbotron {
+  background-color: maroon;
+  color: gold;
+}
+
+.page-header {
+  background-color: white;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  text-align: justify;
+}
+
+.row {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+}
+
+.btn-default {
+  background-color: white;
+  width: 60%;
+  height: 175px;
+  border: 2px solid maroon;
+  border-radius: 10px;
+  font-size: 2.5vw;
+}
+
+.btn-default:hover {
+  background-color: gold;
+}
