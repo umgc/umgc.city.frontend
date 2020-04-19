@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Resolve } from "@angular/router";
 import * as _m from "moment";
 import { UserSignData } from "../models";
@@ -10,13 +10,17 @@ import { UserSignData } from "../models";
 export class AppRepoService {
   private loggedInToken = "sure I am logged in";
   private loggedInTokenExpires: _m.Moment;
-
-  constructor(private httpClient: HttpClient) {}
+  private httpOptions: any;
+  constructor(private httpClient: HttpClient) {
+    this.httpOptions = {
+      headers: new HttpHeaders().set("Content-Type", "application/json"),
+    };
+  }
 
   async commTest(): Promise<string> {
     let response;
     try {
-      response = await this.httpClient.get("api").toPromise();
+      response = await this.httpClient.get("api", this.httpOptions).toPromise();
       return response;
     } catch (e) {
       console.log(e);
