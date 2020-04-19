@@ -70,7 +70,7 @@ import { PasadenaZoneComponent } from './pages/pasadena-zone/pasadena-zone.compo
     MatDialogModule
   ],
   entryComponents: [
-    PasadenaMapKeyComponent
+    PasadenaMapKeyComponent, PasadenaZoneComponent
   ],
   bootstrap: [AppComponent]
 })

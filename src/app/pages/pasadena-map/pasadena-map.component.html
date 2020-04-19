@@ -13,7 +13,7 @@
             <div class="noborder-0" style="width: 1510px;">
                 <img class="paasadena_img_map border" id="map_interactive" src="/assets/img/Zoning_Map.png" usemap="#imgmap" alt="Map for City of Pasadena Zoning Areas" />
                 <map name="imgmap" id="imgmap"> 
-                    <area *ngFor="let zone of zones" shape="{{zone.shape}}" coords="{{zone.coords}}" (click)="openZoningDialog(zone.symbol)">                  
+                    <area *ngFor="let zone of mapZoneShapeList" shape="{{zone.shape}}" coords="{{zone.coords}}" (click)="openZoningDialog(zone.symbol)">                  
                 </map>
             </div>
         </div>

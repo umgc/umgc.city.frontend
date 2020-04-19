@@ -12,19 +12,19 @@ import { PasadenaZone } from '../../models/pasadena-zone';
   styleUrls: ['./pasadena-map.component.css']
 })
 export class PasadenaMapComponent implements OnInit {
- @Input() mapZones: MapShape[];
  @Input() dialogData: PasadenaZone[];
 
  MapKeyDialogRef: MatDialogRef<PasadenaMapKeyComponent>;
  MapZoneDialogRef: MatDialogRef<PasadenaZoneComponent>;
 
  zoneSymbol: string;
+ mapZoneShapeList: MapShape[];
 
 
   constructor(private dialog: MatDialog, private mapService: MapService) {}
 
   ngOnInit(){
-  
+    this.mapZoneShapeList = this.mapService.getMapZoneShapeList();
   }
 
   openMapKeyDialog() {
