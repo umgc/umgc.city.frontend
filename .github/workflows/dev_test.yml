@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Test/Deploy UMGC City Web
+name: Test and Code Coverage UMGC City Web
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -45,6 +45,7 @@ jobs:
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v1.1
+        continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.CITY_FRONTEND_SONAR }}
