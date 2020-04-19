@@ -3,11 +3,12 @@ import { RouterTestingModule } from "@angular/router/testing";
 import { AppComponent } from "./app.component";
 import { FormsModule } from "@angular/forms";
 import { ChatModule } from "./features/chat/chat.module";
+import { HttpClientModule } from "@angular/common/http";
 
 describe("AppComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, FormsModule, ChatModule],
+      imports: [RouterTestingModule, HttpClientModule, FormsModule, ChatModule],
       declarations: [AppComponent],
     }).compileComponents();
   }));

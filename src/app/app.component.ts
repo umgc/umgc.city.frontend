@@ -2,7 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import { MapShape } from "./models/map-shape";
 import mapData from "../assets/data.json";
 import { MapService } from "./services/map.service";
-
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
