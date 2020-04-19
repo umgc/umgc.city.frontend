@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { MapShape } from './models/map-shape';
-import mapData from '../assets/data.json';
-import { MapService } from './services/map.service';
+import { Component, OnInit } from "@angular/core";
+import { MapShape } from "./models/map-shape";
+import mapData from "../assets/data.json";
+import { MapService } from "./services/map.service";
 
 @Component({
   selector: "app-root",
@@ -9,13 +9,12 @@ import { MapService } from './services/map.service';
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  title = 'UMGC City Admin Portal';
-  mapZoningList: MapShape[] = mapData.zones
+  title = "UMGC City Admin Portal";
+  mapZoningList: MapShape[] = mapData.zones;
 
-  constructor(private mapService: MapService) { }
+  constructor(private mgapService: MapService) {}
 
   ngOnInit() {
-    this.mapService.setMaponeShapeList(this.mapZoningList);
+    //this.mapService.setMaponeShapeList(this.mapZoningList);
   }
-
 }

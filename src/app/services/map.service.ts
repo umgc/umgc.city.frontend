@@ -4,6 +4,7 @@ import { Observable, throwError } from "rxjs";
 import { environment } from "../../environments/environment.prod";
 import { PasadenaZone } from "../models/pasadenaZone";
 import { retry, catchError } from "rxjs/operators";
+import { MapShape } from "../models/map-shape";
 
 @Injectable({
   providedIn: "root",
