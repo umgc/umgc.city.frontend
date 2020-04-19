@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {PasadenaMapKeyComponent} from '../pasadena-map-key/pasadena-map-key.component';
 import {PasadenaZoneComponent} from '../pasadena-zone/pasadena-zone.component';
 import {MatDialog, MatDialogRef } from '@angular/material';
 import { MapService} from '../../services/map.service';
-import * as mapData from '../assets/map-data.json';
+import { MapShape } from '../../models/map-shape';
+import { PasadenaZone } from '../../models/pasadena-zone';
 
 @Component({
   selector: 'app-pasadena-map',
@@ -11,10 +12,14 @@ import * as mapData from '../assets/map-data.json';
   styleUrls: ['./pasadena-map.component.css']
 })
 export class PasadenaMapComponent implements OnInit {
+ @Input() mapZones: MapShape[];
+ @Input() dialogData: PasadenaZone[];
 
  MapKeyDialogRef: MatDialogRef<PasadenaMapKeyComponent>;
  MapZoneDialogRef: MatDialogRef<PasadenaZoneComponent>;
- zones: any = (mapData as any).default;
+
+ zoneSymbol: string;
+
 
   constructor(private dialog: MatDialog, private mapService: MapService) {}
 
@@ -30,11 +35,16 @@ export class PasadenaMapComponent implements OnInit {
       });
   }
 
-  openZoningDialog(symbol: string){
+  openZoningDialog(zoneSymbol: string){
+    this.zoneSymbol = zoneSymbol;
+    this.mapService.getPasadenaZones(this.zoneSymbol).subscribe((zone: PasadenaZone[]) => {this.dialogData = zone});
+      console.log(this.dialogData);
     this.MapZoneDialogRef = this.dialog.open(PasadenaZoneComponent,
       {
       hasBackdrop:true,
+      maxWidth: "50%",
+      data: {zone: this.dialogData}
     });
-    this.mapService.setZoneSymbol(symbol);
   }
 }
+

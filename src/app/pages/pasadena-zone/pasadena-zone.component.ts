@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material';
-import { MapService } from 'src/app/services/map.service';
+import { Component, OnInit, Inject, Input } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { PasadenaZone } from '../../models/pasadena-zone';
+
 
 @Component({
   selector: 'app-pasadena-zone',
@@ -10,15 +10,16 @@ import { PasadenaZone } from '../../models/pasadena-zone';
 })
 export class PasadenaZoneComponent implements OnInit {
 
-  PasadenaZones: any [];
-  zoneSymbol: string;
+  constructor(
+    public dialogRef: MatDialogRef<PasadenaZoneComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: PasadenaZone[]) {}
 
-  constructor(public dialogRef: MatDialogRef<PasadenaZoneComponent>, private mapService: MapService) { }
+    ngOnInit() {
+    }
+  
+    closeDialog() {
+      this.dialogRef.close();
+    }
+  
 
-  ngOnInit() {
-    this.zoneSymbol = this.mapService.getZoneSymbol();
-    this.mapService.getPasadenaZones(this.zoneSymbol).subscribe((zone: PasadenaZone[]) => {this.PasadenaZones = zone;
-      console.log(zone);
-    })
-  }
 }

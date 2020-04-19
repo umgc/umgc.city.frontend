@@ -8,7 +8,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { FormsModule } from "@angular/forms";
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { UploadUsecaseComponent } from './pages/upload-usecase/upload-usecase.component';
-import { HelpComponent } from './help/help.component';
+import { HelpComponent } from './pages/help/help.component';
 import { NewUsecaseComponent } from './pages/new-usecase/new-usecase.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { PasadenaMapComponent } from './pages/pasadena-map/pasadena-map.component';
@@ -63,8 +63,7 @@ import { PasadenaZoneComponent } from './pages/pasadena-zone/pasadena-zone.compo
     MatToolbarModule,
     MatMenuModule,
     MatDialogModule,
-    MatButtonModule,
-
+    MatButtonModule
   ],
   exports:[
     MatButtonModule,

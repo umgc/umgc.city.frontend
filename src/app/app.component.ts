@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { MapShape } from './models/map-shape';
+import mapData from '../assets/data.json';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 })
 export class AppComponent {
   title = 'UMGC City Admin Portal';
+  mapZoningList: any = mapData.zones
 
   constructor() { }
 
