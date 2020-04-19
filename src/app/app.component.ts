@@ -1,4 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
+import { MapShape } from './models/map-shape';
+import mapData from '../assets/data.json';
+import { MapService } from './services/map.service';
 
 @Component({
   selector: "app-root",
@@ -6,5 +9,13 @@ import { Component } from "@angular/core";
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  title = "UMGC City Admin Portal";
+  title = 'UMGC City Admin Portal';
+  mapZoningList: MapShape[] = mapData.zones
+
+  constructor(private mapService: MapService) { }
+
+  ngOnInit() {
+    this.mapService.setMaponeShapeList(this.mapZoningList);
+  }
+
 }

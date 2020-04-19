@@ -24,9 +24,7 @@ RUN rm -rf /usr/share/nginx/html/*
 ## Copy our default nginx config
 COPY default.conf.template /etc/nginx/conf.d/default.conf.template
 COPY nginx.conf /etc/nginx/nginx.conf
-## COPY ./dev/default.nginx.conf /etc/nginx/conf.d/
-## COPY ./dev/nginx.conf /etc/nginx/conf.d/default.conf.template
-## COPY ./dev/nginx.conf /etc/nginx/nginx.conf
+
 
 ## From ‘build’ stage copy over the artifacts in dist folder to default nginx public folder
 COPY --from=build  /ng-app/dist /usr/share/nginx/html
