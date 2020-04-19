@@ -1,0 +1,23 @@
+<form>
+    <div class="title">
+        <h1>{{title}}</h1>
+    </div>
+    <div class="container">
+        <label id="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required><br/><br/>
+
+        <label id="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required><br/><br/>
+
+        <button routerLink="/Welcome">Login</button>
+        <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+    </div><br>
+
+    <div class="container">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span class="password">Forgot <a routerLink="/Help" routerLinkActive="active">password?</a></span>
+    </div>
+</form>
+<br/>
