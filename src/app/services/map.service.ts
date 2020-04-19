@@ -11,8 +11,7 @@ import { retry, catchError } from "rxjs/operators";
 export class MapService {
   private apiURL = environment.zoningJavaService;
   private zoneSymbol: string;
-  private pasadenaZones: PasadenaZone[];
-  pasadenaZoneRequest;
+  private mapZoneShapeList: MapShape[];
 
   constructor(private http: HttpClient) {}
 

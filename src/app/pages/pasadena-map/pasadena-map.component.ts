@@ -30,6 +30,5 @@ export class PasadenaMapComponent implements OnInit {
     this.MapZoneDialogRef = this.dialog.open(PasadenaZoneComponent, {
       hasBackdrop: true,
     });
-    this.mapService.setZoneSymbol(symbol);
   }
 }
