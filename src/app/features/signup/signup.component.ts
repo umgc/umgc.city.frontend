@@ -17,6 +17,7 @@ export class SignupComponent implements OnInit {
 
   async submitNewUser(): Promise<void> {
     try {
+      this.newUser.authoritiesId = "6641fb15-85aa-4489-b0d8-6bfd26d228c0";
       const response = this.repoService.submitNewUser(this.newUser);
       console.log(response);
     } catch (e) {

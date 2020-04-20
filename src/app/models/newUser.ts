@@ -5,4 +5,5 @@ export class NewUser {
   state: string;
   emailAddress: string;
   password: string;
+  authoritiesId: string;
 }
