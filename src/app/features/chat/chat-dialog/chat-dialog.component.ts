@@ -12,6 +12,7 @@ import { ChatService, Message } from "../chat.service";
 import { Observable } from "rxjs";
 import { scan } from "rxjs/operators";
 import { Router } from "@angular/router";
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: "chat-dialog",
@@ -26,10 +27,13 @@ export class ChatDialogComponent implements OnInit {
   todayNumber: number = Date.now();
   todayDate: Date = new Date();
   todayString: string = new Date().toDateString();
+  uiSystem = environment.uiwatsonibm;
 
   messages: Observable<Message[]>;
   formValue: string;
-  constructor(private chat: ChatService) {}
+  constructor(private chat : ChatService) {
+    window['uiSystem'] = this.uiSystem;
+  }
 
   ngOnInit() {
     //appends to array after each new message is added to source

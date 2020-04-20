@@ -1,3 +1,4 @@
+
 const chatbox = jQuery.noConflict();
 var $=jQuery.noConflict();
 
@@ -6,7 +7,6 @@ var $messages = $(".messages-content"),
   h,
   m,
   i = 0;
-
 
 chatbox(() => {
   chatbox(".chatbox-open").click(() =>
@@ -32,30 +32,12 @@ chatbox(() => {
     chatbox(".chatbox-panel").fadeOut();
     chatbox(".chatbox-open").fadeIn();
   });
-});
-
-function insertMessage() {
-  msg = $(".message-input").val();
-  if ($.trim(msg) == "") {
-    return false;
-  }
-  $('<div class="message message-personal" style="color:green; text-align: right;">' + msg + "</div>")
-    .appendTo($(".mCSB_container"))
-    .addClass("new");
-  $(".message-input").val(null);
-}
-
-$(".message-submit").click(function() {
-  insertMessage();
-});
-
-$(window).on("keydown", function(e) {
-  if (e.which == 13) {
-    insertMessage();
-    return false;
-  }
-});
-$(".button").click(function() {
-  $(".menu .items span").toggleClass("active");
-  $(".menu .button").toggleClass("active");
+})
+window.loadWatsonAssistantChat({
+  integrationID: "0cc1e6af-455e-4d6b-8468-b8f7a0d9b3fb", // The ID of this integration.
+  region: "us-east" // The region your integration is hosted in.
+}).then(function(instance){
+  if(window.uiSystem){
+    instance.render();
+  };
 });

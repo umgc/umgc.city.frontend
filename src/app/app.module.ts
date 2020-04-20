@@ -25,6 +25,7 @@ import {
   MapZoneDialogComponent,
   PasadenaComponent,
 } from "./features";
+import { ChatModule } from './features/chat/chat.module';
 import { NewCaseComponent } from "./features/authorized/new-case/new-case.component";
 import { UploadCaseComponent } from "./features/authorized/upload-case/upload-case.component";
 @NgModule({
@@ -59,6 +60,7 @@ import { UploadCaseComponent } from "./features/authorized/upload-case/upload-ca
     MatMenuModule,
     MatDialogModule,
     MatButtonModule,
+    ChatModule
   ],
   exports: [MatButtonModule, MatDialogModule],
   entryComponents: [MapKeyDialogComponent, MapZoneDialogComponent],
