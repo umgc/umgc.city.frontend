@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Resolve } from "@angular/router";
 import * as _m from "moment";
 import { UserSignData } from "../models";
+import { NewUser } from "../models/newUser";
 
 @Injectable({
   providedIn: "root",
@@ -51,5 +52,21 @@ export class AppRepoService {
   signUserOut(): void {
     this.loggedInToken = null;
     this.loggedInTokenExpires = null;
+  }
+
+  async submitNewUser(newUser: NewUser): Promise<any> {
+    const data = new FormData();
+    data.append("firstName", newUser.firstName);
+    data.append("lastName", newUser.lastnName);
+    data.append("email", newUser.emailAddress);
+    data.append("password", newUser.password);
+    data.append("city", newUser.city);
+    data.append("state", newUser.state);
+    const result = await this.httpClient
+      .post("/api/city-zoning-project-management/users", newUser, {
+        responseType: "json",
+      })
+      .toPromise();
+    return result;
   }
 }
