@@ -4,10 +4,8 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { FormsModule } from "@angular/forms";
-import { PasadenaMapComponent } from "./pages-not-used/pasadena-map/pasadena-map.component";
-import { PasadenaHeaderComponent } from "./layout/pasadena/pasadena-header/pasadena-header.component";
-import { PasadenaFooterComponent } from "./layout/pasadena/pasadena-footer/pasadena-footer.component";
-import { PasadenaLayoutComponent } from "./layout/pasadena/pasadena-layout/pasadena-layout.component";
+import { PasadenaHeaderComponent } from "./features/pasadena/pasadena-header/pasadena-header.component";
+import { PasadenaFooterComponent } from "./features/pasadena/pasadena-footer/pasadena-footer.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { MatToolbarModule } from "@angular/material/toolbar";
@@ -37,10 +35,8 @@ import { UploadCaseComponent } from "./features/authorized/upload-case/upload-ca
     HomeComponent,
     SigninComponent,
     SignupComponent,
-    PasadenaMapComponent,
     PasadenaHeaderComponent,
     PasadenaFooterComponent,
-    PasadenaLayoutComponent,
     PasadenaMapKeyComponent,
     PasadenaZoneComponent,
     SigninComponent,

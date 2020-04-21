@@ -11,9 +11,9 @@ export class AppComponent {
   title = "UMGC City Admin Portal";
   mapZoningList: MapShape[] = mapData.zones;
 
-  constructor(private mgapService: MapService) {}
+  constructor(private mapService: MapService) {}
 
   ngOnInit() {
-    //this.mapService.setMaponeShapeList(this.mapZoningList);
+    this.mapService..setMapShapeList(this.mapZoningList);
   }
 }

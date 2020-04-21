@@ -18,12 +18,10 @@ export class MapZoneDialogComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.zoneSymbol = this.mapService.getZoneSymbol();
-    this.mapService
-      .getPasadenaZones(this.zoneSymbol)
-      .subscribe((zone: PasadenaZone[]) => {
-        this.pasadenaZones = zone;
-        console.log(zone);
-      });
+   
+  }
+
+  closeDialog() {
+    this.dialogRef.close();
   }
 }
