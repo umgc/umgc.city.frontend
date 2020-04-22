@@ -26,6 +26,8 @@ import {
   PasadenaComponent,
 } from "./features";
 import { NewCaseComponent } from "./features/authorized/new-case/new-case.component";
+import { SelectCaseComponent } from "./features/authorized/select-case/select-case.component";
+import { EditCaseComponent } from "./features/authorized/edit-case/edit-case.component";
 import { UploadCaseComponent } from "./features/authorized/upload-case/upload-case.component";
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { UploadCaseComponent } from "./features/authorized/upload-case/upload-ca
     SignupComponent,
     PasadenaComponent,
     NewCaseComponent,
+    SelectCaseComponent,
+    EditCaseComponent,
     UploadCaseComponent,
   ],
   imports: [

@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Resolve } from "@angular/router";
 import * as _m from "moment";
 import { UserSignData } from "../models";
+import { UseCase } from '../models/useCase';
+import { environment } from "../../environments/environment.prod";
 
 @Injectable({
   providedIn: "root",
@@ -11,6 +13,10 @@ export class AppRepoService {
   private loggedInToken = "sure I am logged in";
   private loggedInTokenExpires: _m.Moment;
   private httpOptions: any;
+  private apiURL = environment.apiBaseUrl;
+
+  knownUseCases: { caseid: string, usesCases: UseCase[] } = {} as any;
+
   constructor(private httpClient: HttpClient) {
     this.httpOptions = {
       headers: new HttpHeaders().set("Content-Type", "application/json"),
@@ -51,5 +57,31 @@ export class AppRepoService {
   signUserOut(): void {
     this.loggedInToken = null;
     this.loggedInTokenExpires = null;
+  }
+
+  async getUseCaseByCityId(cityId: string): Promise<UseCase[]> {
+    if (this.knownUseCases[cityId]) {
+      return this.knownUseCases[cityId];
+    }
+
+    const useCase = await this.httpClient
+      .get<UseCase[]>(this.apiURL + "/cities/" + cityId + "/usecases", { responseType: 'json' })//this.apiURL + symbol)
+      .toPromise();
+
+    this.knownUseCases[cityId] = useCase;
+
+    return useCase
+  }
+
+  async createUseCase(useCase: UseCase) {
+    const result = await this.httpClient.post(this.apiURL + "/usecases", useCase).toPromise();
+  }
+
+  async editUseCase(useCase: UseCase) {
+    const result = await this.httpClient.put(this.apiURL + "/usecases", useCase).toPromise();
+  }
+
+  async deleteUseCase(landUseId: string) {
+    const result = await this.httpClient.delete(this.apiURL + "/usecases/" + landUseId).toPromise();
   }
 }
