@@ -27,6 +27,7 @@ import { NewCaseComponent } from "./features/authorized/new-case/new-case.compon
 import { SelectCaseComponent } from "./features/authorized/select-case/select-case.component";
 import { EditCaseComponent } from "./features/authorized/edit-case/edit-case.component";
 import { UploadCaseComponent } from "./features/authorized/upload-case/upload-case.component";
+import { MapService } from './services/map.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,5 +64,6 @@ import { UploadCaseComponent } from "./features/authorized/upload-case/upload-ca
   exports: [MatButtonModule, MatDialogModule],
   entryComponents: [MapKeyDialogComponent, MapZoneDialogComponent],
   bootstrap: [AppComponent],
+  providers: [MapService]
 })
 export class AppModule {}

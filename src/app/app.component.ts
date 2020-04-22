@@ -14,6 +14,5 @@ export class AppComponent {
   constructor(private mapService: MapService) {}
 
   ngOnInit() {
-    this.mapService..setMapShapeList(this.mapZoningList);
   }
 }

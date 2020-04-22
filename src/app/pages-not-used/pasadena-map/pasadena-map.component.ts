@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { PasadenaMapKeyComponent } from "../pasadena-map-key/pasadena-map-key.component";
-import { PasadenaZoneComponent } from "../pasadena-zone/pasadena-zone.component";
 import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { MapService } from "../../services/map.service";
 // import * as mapData from "/assets/map-data.json";

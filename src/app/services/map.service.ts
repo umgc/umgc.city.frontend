@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpResponse } from "@angular/common/http";
-import { Observable, throwError } from "rxjs";
+import { HttpClient, HttpResponse, HttpHeaders, HttpParams } from "@angular/common/http";
+import { throwError } from "rxjs";
 import { environment } from "../../environments/environment.prod";
 import { PasadenaZone } from "../models/pasadenaZone";
 import { retry, catchError } from "rxjs/operators";
@@ -11,24 +11,32 @@ import { MapShape } from "../models/map-shape";
 })
 export class MapService {
   private apiURL = environment.zoningJavaService;
-  private zoneSymbol: string;
-  private mapZoneShapeList: MapShape[];
-
-  constructor(private http: HttpClient) {}
-
-  getPasadenaZones(symbol: string): Observable<PasadenaZone[]> {
-    return this.http
-      .get<PasadenaZone[]>(this.apiURL + symbol)
-      .pipe(retry(1), catchError(this.errorHandl));
+  private pasadenaZone: PasadenaZone;
+  private httpOptions: any;
+  private httpParams: any; 
+  constructor(private httpClient: HttpClient) {
+    this.httpOptions = {
+      headers: new HttpHeaders().set("Content-Type", "application/json"),
+    };
   }
 
-  getZoneSymbol() {
-    return this.zoneSymbol;
+  public sendGETRequestWithParameters(dataObject: Object){   
+  let params = new HttpParams();
+  params = params.append("requestData", JSON.stringify(dataObject));
+  return params;
+  }
+  
+
+  async getZoneData(mapShape: MapShape) {
+    this.httpParams =  this.sendGETRequestWithParameters(mapShape);
+    const result = await this.httpClient.get<PasadenaZone>(this.apiURL, {params: this.httpParams})
+    .toPromise();
+  return result;
   }
 
-  setZoneSymbol(zoneSymbol: string) {
-    this.zoneSymbol = zoneSymbol;
-  }
+
+
+
 
   // Error handling
   errorHandl(error) {

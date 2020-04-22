@@ -1,8 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { MatDialogRef, MatDialog } from "@angular/material/dialog";
+import { MatDialogRef, MatDialog, MatDialogConfig } from "@angular/material/dialog";
 import { MapKeyDialogComponent } from "./map-key-dialog/map-key-dialog.component";
 import { MapZoneDialogComponent } from "./map-zone-dialog/map-zone-dialog.component";
 import { MapService } from "../../services/map.service";
+import { PasadenaZone } from "../../models/pasadenaZone";
+import { MapShape } from "../../models/map-shape";
 import * as mapData from "./map-data.json";
 
 @Component({
@@ -13,10 +15,11 @@ import * as mapData from "./map-data.json";
 export class PasadenaComponent implements OnInit {
   mapKeyDialogRef: MatDialogRef<MapKeyDialogComponent>;
   mapZoneDialogRef: MatDialogRef<MapZoneDialogComponent>;
-  zones: any = (mapData as any).default;
+  zoneShapeData: any = (mapData as any).default;
+  zoneData: any;
 
   constructor(private dialog: MatDialog, private mapService: MapService) {
-    console.log(this.zones);
+    console.log(this.zoneShapeData);
   }
 
   ngOnInit(): void {}
@@ -28,11 +31,12 @@ export class PasadenaComponent implements OnInit {
     });
   }
 
-  openZoningDialog(symbol: string) {
-    this.mapService.getPasadenaZones
-    this.mapZoneDialogRef = this.dialog.open(MapZoneDialogComponent, {
-      hasBackdrop: true,
-    });
-    this.mapService.setZoneSymbol(symbol);
+
+  openZoningDialog(zoneShapeData: any) {
+    this.zoneData = this.mapService.getZoneData(zoneShapeData);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = this.zoneData;
+    this.dialog.open(MapZoneDialogComponent, dialogConfig);
+    
   }
 }

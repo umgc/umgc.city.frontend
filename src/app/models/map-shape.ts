@@ -1,6 +1,8 @@
 export class MapShape {
     shape: string;
     id: string;
-    symbol: string;
+    zoneLabel: string;
+    zoneCode: string;
+    overlayCode: string;
     coords: string;
   }

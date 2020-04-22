@@ -1,24 +1,49 @@
-<h2 mat-dialog-title>Zone: {{ zoneSymbol.zoneSymbol }}</h2>
-
-<mat-spinner *ngIf="zones.length === 0"></mat-spinner>
-
-<mat-card *ngFor="let product of products" style="margin-top:10px;">
-    <mat-card-header>
-        <mat-card-title>{{product.name}}</mat-card-title>
-        <mat-card-subtitle>{{product.price}} $/ {{product.quantity}}
-        </mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-        <p>
-            {{product.description}}
-        </p>
-
-    </mat-card-content>
-    <mat-card-actions>
-        <button mat-button> Buy product</button>
-    </mat-card-actions>
-</mat-card>
-
+<h2 mat-dialog-title>Zoning Area: {{ data.codeLabel }}</h2>
+<mat-dialog-content>
+    <h3>Base Zone: {{ data.baseCode }}</h3>
+    <h4>{{ data.baseCodeDescription }}</h4>
+    <div ngIf="data.overlayCode">
+        <h3>Overlay Zone: {{ data.overlayCode }}</h3>
+        <h4>{{ data.overlayDescription }}</h4>
+    </div>
+    <hr style="width:80%" ;>
+    <h3>General Requirements for Development and New Land Uses</h3>
+    <br>
+    <a href="https://library.municode.com/ca/pasadena/codes/code_of_ordinances?nodeId=TIT17_ZONING_CODE_ART2ZODIALLAUSZOECST_CH17.21DELAUSAPRE_17.21.030ALLAUSPERE">Allowable Land Uses and Permits</a>
+    <br>
+    <p>Base Zone: {{ data.baseCode }}</p>
+    <a href="data.baseGeneralStandardsURL">General Development Standards</a>
+    <br>
+    <div ng-if="data.baseAdditionalStandardsURL">
+        <a href="{{ data.baseAdditionalStandardsURL }}">Additional Development Standards</a>
+        <br>
+    </div>
+    <div ng-if="data.baseGardenStandards">
+        <a href="{{ data.baseGardenStandards }}">Garden Development Standards</a>
+        <br>
+    </div>
+    <div ng-if="data.baseFrontageAndFacadesStandards">
+        <a href="{{ data.baseFrontageAndFacadesStandards }}">Frontage and Facades Standards</a>
+        <br>
+    </div>
+    <div ng-if="data.overlayCode">
+        <p>Overlay Zone: {{ data.overlayCode }}</p>
+        <a href="data.overlayGeneralStandardsURL">General Development Standards</a>
+        <br>
+        <div ng-if="data.overlayAdditionalStandardsURL">
+            <a href="{{ data.overlayAdditionalStandardsURL }}">Additional Development Standards</a>
+            <br>
+        </div>
+        <div ng-if="{{ data.overlayGardenStandards }}">
+            <a href="{{ data.overlayGardenStandards }}">Garden Development Standards</a>
+            <br>
+        </div>
+        <div ng-if="{{ data.overlayFrontageAndFacadesStandards }}">
+            <a href="{{ data.overlayFrontageAndFacadesStandards }}">Frontage and Facades Standards</a>
+            <br>
+        </div>
+    </div>
+</mat-dialog-content>
 <mat-dialog-actions>
     <button class="mat-raised-button" (click)="close()">Close</button>
 </mat-dialog-actions>
