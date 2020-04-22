@@ -4,7 +4,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { FormsModule } from "@angular/forms";
-import { PasadenaMapComponent } from "./pages/pasadena-map/pasadena-map.component";
+import { PasadenaMapComponent } from "./pages-not-used/pasadena-map/pasadena-map.component";
 import { PasadenaHeaderComponent } from "./layout/pasadena/pasadena-header/pasadena-header.component";
 import { PasadenaFooterComponent } from "./layout/pasadena/pasadena-footer/pasadena-footer.component";
 import { PasadenaLayoutComponent } from "./layout/pasadena/pasadena-layout/pasadena-layout.component";
@@ -12,11 +12,11 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatMenuModule } from "@angular/material/menu";
-import { PasadenaMapKeyComponent } from "./pages/pasadena-map-key/pasadena-map-key.component";
+import { PasadenaMapKeyComponent } from "./pages-not-used/pasadena-map-key/pasadena-map-key.component";
 import { MatDialogModule, MatDialogRef } from "@angular/material/dialog";
 import { MatButtonModule } from "@angular/material/button";
 import { HttpClientModule } from "@angular/common/http";
-import { PasadenaZoneComponent } from "./pages/pasadena-zone/pasadena-zone.component";
+import { PasadenaZoneComponent } from "./pages-not-used/pasadena-zone/pasadena-zone.component";
 import {
   SigninComponent,
   SignupComponent,

@@ -5,6 +5,7 @@ import * as _m from "moment";
 import { UserSignData } from "../models";
 import { UseCase } from '../models/useCase';
 import { environment } from "../../environments/environment.prod";
+import { NewUser } from "../models/newUser";
 
 @Injectable({
   providedIn: "root",
@@ -83,5 +84,21 @@ export class AppRepoService {
 
   async deleteUseCase(landUseId: string) {
     const result = await this.httpClient.delete(this.apiURL + "/usecases/" + landUseId).toPromise();
+  }
+
+  async submitNewUser(newUser: NewUser): Promise<any> {
+    const data = new FormData();
+    data.append("firstName", newUser.firstName);
+    data.append("lastName", newUser.lastnName);
+    data.append("email", newUser.emailAddress);
+    data.append("password", newUser.password);
+    data.append("city", newUser.city);
+    data.append("state", newUser.state);
+    const result = await this.httpClient
+      .post("/api/city-zoning-project-management/users", newUser, {
+        responseType: "json",
+      })
+      .toPromise();
+    return result;
   }
 }

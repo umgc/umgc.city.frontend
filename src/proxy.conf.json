@@ -1,0 +1,13 @@
+{
+  "/api/*": {
+    "target": "http://appdev-umgc-cityapi.herokuapp.com/",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "protocol": "https:",
+    "port": 443,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}
