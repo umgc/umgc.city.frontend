@@ -46,28 +46,6 @@ const routes: Routes = [
   },
 ];
 
-// const routes: Routes = [
-//   {
-//     path: '',
-//     component: PasadenaLayoutComponent,
-//     children: [
-//       { path: '', component: LandingPageComponent, pathMatch: 'full'},
-//     ]
-//   },
-//   {
-//     path: '',
-//     component: AuthorizedLayoutComponent,
-//     children: [
-//       { path: 'home', component: HomeComponent},
-//       { path: 'signin', component: SignInComponent },
-//       { path: 'signup', component: SignUpComponent},
-//       { path: 'usecase/upload', component: UploadUsecaseComponent},
-//       { path: 'help', component: HelpComponent},
-//       { path: 'usecase/new', component: NewUsecaseComponent},
-//       { path: 'welcome', component: WelcomeComponent}
-//     ]
-//   }
-
 @NgModule({
   imports: [RouterModule.forRoot(routes), BrowserModule],
   exports: [RouterModule],

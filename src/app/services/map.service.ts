@@ -10,7 +10,7 @@ import { MapShape } from "../models/map-shape";
   providedIn: "root",
 })
 export class MapService {
-  private apiURL = environment.zoningJavaService;
+  private apiURL = 'http://localhost:5000/city-zoning-project-management/pasadena/zones/';
   private pasadenaZone: PasadenaZone;
   private httpOptions: any;
   private httpParams: any; 
