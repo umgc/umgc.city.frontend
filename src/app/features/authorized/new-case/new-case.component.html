@@ -1,42 +1,57 @@
 <br />
-<form>
+<form >
   <div class="jumbotron">
     <h1>{{ title }}</h1>
   </div>
   <div class="form-group">
-    <label for="useCaseName">Name</label>
-    <input type="text" class="form-control" id="useCaseName" placeholder="" />
+    <label for="useCaseName">Use Case Name</label>
+    <input type="text" class="form-control" id="useCaseName" name="zoneLandUseDescription" placeholder="Use Case Name" [(ngModel)]="useCase.zoneLandUseDescription"/>
   </div>
   <div class="form-group">
-    <label for="zoneCode">Zone Code</label>
-    <input type="text" class="form-control" id="zoneCode" placeholder="" />
+    <label for="zoneSymbol">Zone Code</label>
+    <input type="text" class="form-control" id="zoneSymbol" name="zoneSymbol" placeholder="Zone Code" [(ngModel)]="useCase.zoneSymbol"/>
   </div>
   <div class="form-group">
-    <label for="def">Definition(s)</label>
-    <input type="text" class="form-control" id="def" placeholder="" />
+    <label for="zoneDescription">Zone Description</label>
+    <input type="text" class="form-control" id="zoneDescription" name="zoneDescription" placeholder="Zone Description" [(ngModel)]="useCase.zoneDescription"/>
   </div>
   <div class="form-group">
-    <label for="reg">Regulation(s)</label>
-    <input type="text" class="form-control" id="reg" placeholder="" />
+    <label for="generalStandardURL">General Standard URL</label>
+    <input type="text" class="form-control" id="generalStandardURL" name="generalStandardURL" placeholder="General Standard URL" [(ngModel)]="useCase.generalStandardURL"/>
   </div>
   <div class="form-group">
-    <label for="ord">Ordinance</label>
-    <input type="text" class="form-control" id="ord" placeholder="" />
+    <label for="gardenStandardURL">Garden Standard URL</label>
+    <input type="text" class="form-control" id="gardenStandardURL" name="gardenStandardURL" placeholder="Garden Standard URL" [(ngModel)]="useCase.gardenStandardURL"/>
   </div>
   <div class="form-group">
-    <label for="permit">Permit Requirement(s)</label>
-    <input type="text" class="form-control" id="permit" placeholder="" />
+    <label for="additionalStandardURL">Additional Standard URL</label>
+    <input type="text" class="form-control" id="additionalStandardURL" name="additionalStandardURL" placeholder="Additional Standard URL" [(ngModel)]="useCase.additionalStandardURL"/>
   </div>
   <div class="form-group">
-    <label for="app">Application(s)</label>
-    <input type="text" class="form-control" id="app" placeholder="" />
+    <label for="frontageAndFacadesStandardURL">Frontage and Facades URL</label>
+    <input type="text" class="form-control" id="frontageAndFacadesStandardURL" name="frontageAndFacadesStandardURL" placeholder="Frontage and Facades URL" [(ngModel)]="useCase.frontageAndFacadesStandardURL"/>
+  </div>
+  <div class="form-group">
+    <label for="permitName">Permit Name</label>
+    <input type="text" class="form-control" id="permitName" name="permitName" placeholder="Permit Name" [(ngModel)]="useCase.permitName"/>
+  </div>
+  <div class="form-group">
+    <label for="permitDescription">Permit Description</label>
+    <input type="text" class="form-control" id="permitDescription" name="permitDescription" placeholder="Permit Description" [(ngModel)]="useCase.permitDescription"/>
+  </div>
+  <div class="form-group">
+    <label for="applicationURL">Application URL</label>
+    <input type="text" class="form-control" id="applicationURL" name="applicationURL" placeholder="Application URL" [(ngModel)]="useCase.applicationURL"/>
+  </div>
+  <div class="form-group">
+    <label for="procedureURL">procedure URL</label>
+    <input type="text" class="form-control" id="procedureURL" name="procedureURL" placeholder="procedure URL" [(ngModel)]="useCase.procedureURL"/>
   </div>
   <div class="form-group">
     <label for="chat">ChatBot Keyword(s)</label>
     <input type="text" class="form-control" id="chat" placeholder="" />
   </div>
   <br />
-  <button type="submit" class="btn btn-primary">Submit</button>
-  <span><button type="submit" class="btn btn-warning">Cancel</button></span>
+  <button type="submit" (click)="create()" class="btn btn-primary">Submit</button>
 </form>
 <br />

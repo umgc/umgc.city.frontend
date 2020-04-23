@@ -1,1 +1,25 @@
-<p>select-case works!</p>
+<br />
+<div class="edit-container">
+    <div class="jumbotron">
+        <h1>{{ title }}</h1>
+    </div>
+
+    <div>
+        <p>Below is a list of Use Case(s) associated with this account. To continue working, please perform appropriate
+            action(s)</p>
+    </div>
+
+    <br />
+
+    <div *ngFor="let useCase of useCases">
+        <input type="radio" value="{{ useCase.zoneLandUseId }}" name="rbUseCase" [(ngModel)]="rbSelected" /> &nbsp;
+        <label>{{ useCase.zoneLandUseDescription }}</label><br>
+    </div>
+
+    <br />
+
+    <span><button type="button" class="btn btn-primary" (click)="deleteUseCase()">Delete</button></span>
+    <button type="button" class="btn btn-warning" (click)="redirectToEdit()">Edit</button>
+
+</div>
+<br />

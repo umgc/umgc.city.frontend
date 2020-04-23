@@ -5,6 +5,7 @@ import { AuthorizedComponent } from "./authorized.component";
 import { NewCaseComponent } from "./new-case/new-case.component";
 import { SelectCaseComponent } from "./select-case/select-case.component";
 import { UploadCaseComponent } from "./upload-case/upload-case.component";
+import { EditCaseComponent } from './edit-case/edit-case.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
       {
         path: "select-case",
         component: SelectCaseComponent,
+      },
+      {
+        path: "edit-case",
+        component: EditCaseComponent,
       },
       {
         path: "upload-case",

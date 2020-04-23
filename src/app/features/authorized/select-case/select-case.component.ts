@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { AppRepoService } from "src/app/services/repository.service";
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-select-case',
@@ -6,10 +9,41 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./select-case.component.css']
 })
 export class SelectCaseComponent implements OnInit {
+  title = "Existing Use Case";
+  
+  rbSelected: any;
+  cityId: string;
+  useCases: any = [];
 
-  constructor() { }
+  constructor(private appRepoService: AppRepoService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.cityId = this.route.snapshot.queryParams["cityid"];
+    this.getUseCaseByCityId();
   }
 
+  async getUseCaseByCityId() {
+    this.useCases = await this.appRepoService
+      .getUseCaseByCityId(this.cityId);
+  }
+
+  async deleteUseCase() {
+    if (typeof this.rbSelected == "undefined") alert("Please select a use case.");
+    var result = confirm("Are you sure you would like to delete the selected use case?");
+    if (result) {
+      await this.appRepoService
+      .deleteUseCase(this.rbSelected);
+    location.reload();
+    }    
+  }
+
+  redirectToEdit() {
+    if (typeof this.rbSelected === "undefined") {
+      alert("Please select a use case.");
+    } else {
+      var useCaseId = this.rbSelected;
+      console.log(this.rbSelected);
+      this.router.navigate(['/authorized/edit-case'], { queryParams: { id: `${this.rbSelected}`, cityid: `${this.cityId}` } });
+    }
+  }
 }

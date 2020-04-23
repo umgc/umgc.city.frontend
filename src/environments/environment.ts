@@ -1,5 +1,6 @@
 export const environment = {
   production: false,
-  zoningJavaService: 'http://localhost:5000/city-zoning-project-management/pasadena/zones/'
+  zoningJavaService: 'http://localhost:5000/city-zoning-project-management/pasadena/zones/',
+  apiBaseUrl: 'http://localhost:5000/city-zoning-project-management'
 };
 
