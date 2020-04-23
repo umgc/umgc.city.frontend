@@ -1,0 +1,58 @@
+<br />
+<form *ngIf="useCase">
+  <div class="jumbotron">
+    <h1>{{ title }}</h1>
+  </div>
+  <div class="form-group">
+    <label for="useCaseName">Use Case Name</label>
+    <input type="text" class="form-control" id="useCaseName" name="zoneLandUseDescription" placeholder="{{ useCase.zoneLandUseDescription}}" [(ngModel)]="useCase.zoneLandUseDescription"/>
+  </div>
+  <div class="form-group">
+    <label for="zoneSymbol">Zone Code</label>
+    <input type="text" class="form-control" id="zoneSymbol" name="zoneSymbol" placeholder="{{ useCase.zoneSymbol }}" [(ngModel)]="useCase.zoneSymbol"/>
+  </div>
+  <div class="form-group">
+    <label for="zoneDescription">Zone Description</label>
+    <input type="text" class="form-control" id="zoneDescription" name="zoneDescription" placeholder="{{ useCase.zoneDescription }}" [(ngModel)]="useCase.zoneDescription"/>
+  </div>
+  <div class="form-group">
+    <label for="generalStandardURL">General Standard URL</label>
+    <input type="text" class="form-control" id="generalStandardURL" name="generalStandardURL" placeholder="{{ useCase.generalStandardURL }}" [(ngModel)]="useCase.generalStandardURL"/>
+  </div>
+  <div class="form-group">
+    <label for="gardenStandardURL">Garden Standard URL</label>
+    <input type="text" class="form-control" id="gardenStandardURL" name="gardenStandardURL" placeholder="{{ useCase.gardenStandardURL }}" [(ngModel)]="useCase.gardenStandardURL"/>
+  </div>
+  <div class="form-group">
+    <label for="additionalStandardURL">Additional Standard URL</label>
+    <input type="text" class="form-control" id="additionalStandardURL" name="additionalStandardURL" placeholder="{{ useCase.additionalStandardURL }}" [(ngModel)]="useCase.additionalStandardURL"/>
+  </div>
+  <div class="form-group">
+    <label for="frontageAndFacadesStandardURL">Frontage and Facades URL</label>
+    <input type="text" class="form-control" id="frontageAndFacadesStandardURL" name="frontageAndFacadesStandardURL" placeholder="{{ useCase.frontageAndFacadesStandardURL }}" [(ngModel)]="useCase.frontageAndFacadesStandardURL"/>
+  </div>
+  <div class="form-group">
+    <label for="permitName">Permit Name</label>
+    <input type="text" class="form-control" id="permitName" name="permitName" placeholder="{{ useCase.permitName }}" [(ngModel)]="useCase.permitName"/>
+  </div>
+  <div class="form-group">
+    <label for="permitDescription">Permit Description</label>
+    <input type="text" class="form-control" id="permitDescription" name="permitDescription" placeholder="{{ useCase.permitDescription }}" [(ngModel)]="useCase.permitDescription"/>
+  </div>
+  <div class="form-group">
+    <label for="applicationURL">Application URL</label>
+    <input type="text" class="form-control" id="applicationURL" name="applicationURL" placeholder="{{ useCase.applicationURL }}" [(ngModel)]="useCase.applicationURL"/>
+  </div>
+  <div class="form-group">
+    <label for="procedureURL">procedure URL</label>
+    <input type="text" class="form-control" id="procedureURL" name="procedureURL" placeholder="{{ useCase.procedureURL }}" [(ngModel)]="useCase.procedureURL"/>
+  </div>
+  <div class="form-group">
+    <label for="chat">ChatBot Keyword(s)</label>
+    <input type="text" class="form-control" id="chat" placeholder="" />
+  </div>
+  <br />
+  <button type="submit" (click)="edit()" class="btn btn-primary">Submit</button>
+  <span><button type="submit" (click)="cancel()" class="btn btn-warning">Cancel</button></span>
+</form>
+<br />
