@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from "@angular/core";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
+import { PasadenaZone } from 'src/app/models';
 
 @Component({
   selector: "app-map-zone-dialog",
@@ -7,12 +8,17 @@ import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
   styleUrls: ["./map-zone-dialog.component.css"],
 })
 export class MapZoneDialogComponent implements OnInit {
-  
 
+  
   constructor(
     public dialogRef: MatDialogRef<MapZoneDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
-  ) {}
+    @Inject(MAT_DIALOG_DATA) public data: PasadenaZone) {
+  
+      console.log('Dialog:');
+      console.log(data);
+      
+     
+  }
 
   ngOnInit() {
    

@@ -18,12 +18,5 @@ export class PasadenaZoneComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.zoneSymbol = this.mapService.getZoneSymbol();
-    this.mapService
-      .getPasadenaZones(this.zoneSymbol)
-      .subscribe((zone: PasadenaZone[]) => {
-        this.PasadenaZones = zone;
-        console.log(zone);
-      });
   }
 }

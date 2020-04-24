@@ -10,11 +10,9 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatMenuModule } from "@angular/material/menu";
-import { PasadenaMapKeyComponent } from "./pages-not-used/pasadena-map-key/pasadena-map-key.component";
 import { MatDialogModule, MatDialogRef } from "@angular/material/dialog";
 import { MatButtonModule } from "@angular/material/button";
 import { HttpClientModule } from "@angular/common/http";
-import { PasadenaZoneComponent } from "./pages-not-used/pasadena-zone/pasadena-zone.component";
 import {
   SigninComponent,
   SignupComponent,
@@ -38,8 +36,6 @@ import { MapService } from './services/map.service';
     SignupComponent,
     PasadenaHeaderComponent,
     PasadenaFooterComponent,
-    PasadenaMapKeyComponent,
-    PasadenaZoneComponent,
     SigninComponent,
     SignupComponent,
     PasadenaComponent,

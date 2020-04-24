@@ -6,6 +6,8 @@ import { UserSignData } from "../models";
 import { UseCase } from '../models/useCase';
 import { environment } from "../../environments/environment.prod";
 import { NewUser } from "../models/newUser";
+import { MapShape } from "../models/map-shape";
+import { PasadenaZone } from "../models/pasadenaZone";
 
 @Injectable({
   providedIn: "root",
@@ -14,10 +16,11 @@ export class AppRepoService {
   private loggedInToken = "sure I am logged in";
   private loggedInTokenExpires: _m.Moment;
   private httpOptions: any;
-  private apiURL = environment.apiBaseUrl;
+  //private apiURL = environment.apiBaseUrl;
 
+  private apiURL = 'http://localhost:5000/city-zoning-project-management';
   knownUseCases: { caseid: string, usesCases: UseCase[] } = {} as any;
-
+ 
   constructor(private httpClient: HttpClient) {
     this.httpOptions = {
       headers: new HttpHeaders().set("Content-Type", "application/json"),

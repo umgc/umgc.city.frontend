@@ -9,9 +9,8 @@ import { MapService } from "./services/map.service";
 })
 export class AppComponent {
   title = "UMGC City Admin Portal";
-  mapZoningList: MapShape[] = mapData.zones;
 
-  constructor(private mapService: MapService) {}
+  constructor() {}
 
   ngOnInit() {
   }
