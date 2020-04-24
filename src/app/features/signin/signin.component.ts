@@ -32,7 +32,8 @@ export class SigninComponent implements OnInit {
       this.isSigningIn = false;
     }
     if (!wasSignSuccessful) {
-      // need to show an error dialog;
+      alert("The user credentials are invalid");
+      return;
     }
     if (this.signInData.rememberMeFlag) {
       localStorage.setItem("persistedEmail", this.signInData.email);
@@ -40,5 +41,9 @@ export class SigninComponent implements OnInit {
       localStorage.removeItem("persistedEmail");
     }
     this.router.navigateByUrl("/authorized/landing");
+  }
+
+  cancel() {
+    this.router.navigate(['/home']);
   }
 }

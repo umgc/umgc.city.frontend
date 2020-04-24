@@ -1,9 +1,9 @@
 export class NewUser {
   firstName: string;
-  lastnName: string;
+  lastName: string;
   city: string;
   state: string;
-  emailAddress: string;
+  email: string;
   password: string;
   authoritiesId: string;
 }

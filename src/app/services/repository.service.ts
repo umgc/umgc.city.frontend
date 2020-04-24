@@ -17,6 +17,7 @@ export class AppRepoService {
   private apiURL = environment.apiBaseUrl;
 
   knownUseCases: { caseid: string, usesCases: UseCase[] } = {} as any;
+  cityId: string;
 
   constructor(private httpClient: HttpClient) {
     this.httpOptions = {
@@ -48,28 +49,32 @@ export class AppRepoService {
     const credsFormData = new FormData();
     credsFormData.append("email", signData.email);
     credsFormData.append("password", signData.password);
+
+    try {
+      var result = await this.httpClient
+        .post<NewUser>(this.apiURL + "/login", signData, {
+          responseType: "json",
+        })
+        .toPromise();
+    } catch  {
+      return false;  
+    }
+
+    this.cityId = result.city;
+    localStorage.setItem("cityId", this.cityId);
     return true;
-    // expects a post?
-    // need an endpoint
-    // receives what
-    //this.httpClient.post('')
   }
 
   signUserOut(): void {
     this.loggedInToken = null;
     this.loggedInTokenExpires = null;
+    this.cityId = null;
   }
 
   async getUseCaseByCityId(cityId: string): Promise<UseCase[]> {
-    if (this.knownUseCases[cityId]) {
-      return this.knownUseCases[cityId];
-    }
-
     const useCase = await this.httpClient
-      .get<UseCase[]>(this.apiURL + "/cities/" + cityId + "/usecases", { responseType: 'json' })//this.apiURL + symbol)
+      .get<UseCase[]>(this.apiURL + "/cities/" + this.cityId + "/usecases", { responseType: 'json' })
       .toPromise();
-
-    this.knownUseCases[cityId] = useCase;
 
     return useCase
   }
@@ -89,16 +94,15 @@ export class AppRepoService {
   async submitNewUser(newUser: NewUser): Promise<any> {
     const data = new FormData();
     data.append("firstName", newUser.firstName);
-    data.append("lastName", newUser.lastnName);
-    data.append("email", newUser.emailAddress);
+    data.append("lastName", newUser.lastName);
+    data.append("email", newUser.email);
     data.append("password", newUser.password);
     data.append("city", newUser.city);
     data.append("state", newUser.state);
-    const result = await this.httpClient
-      .post("/api/city-zoning-project-management/users", newUser, {
+    var result = await this.httpClient
+      .post(this.apiURL + "/users", newUser, {
         responseType: "json",
       })
       .toPromise();
-    return result;
   }
 }
