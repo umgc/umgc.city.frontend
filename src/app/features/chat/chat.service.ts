@@ -13,7 +13,7 @@ export class Message {
   providedIn: "root",
 })
 export class ChatService {
-  readonly token = "a22e33de886a49a299353446e2c7dca3";
+  readonly token = environment.dialogflow.umgcBot;
 
   readonly client = new ApiAiClient({ accessToken: this.token });
 
