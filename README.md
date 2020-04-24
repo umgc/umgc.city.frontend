@@ -1,6 +1,6 @@
 ![Test/Code Coverage UMGC City Web](https://github.com/umgc/umgc.city.frontend/workflows/Test/Code%20Coverage/badge.svg)
-![UMGC CITY CI](https://github.com/umgc/nasa.hud/workflows/Deploy%20Dev%20UMGC%20City%20Web/badge.svg)
-![NASA HUD CD](https://github.com/umgc/nasa.hud/workflows/Deploy%20Dev%20UMGC%20City%20Web/badge.svg)
+![UMGC CITY CI](https://github.com/umgc/umgc.city.frontend/workflows/Deploy%20Dev%20UMGC%20City%20Web/badge.svg)
+![UMGC CITY CD](https://github.com/umgc/umgc.city.frontend/workflows/Deploy%20Dev%20UMGC%20City%20Web/badge.svg)
 ![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=umgc-city-frontend&metric=coverage)
 
 ![Sonarcloud Quality](https://sonarcloud.io/api/project_badges/quality_gate?project=umgc-city-frontend)
