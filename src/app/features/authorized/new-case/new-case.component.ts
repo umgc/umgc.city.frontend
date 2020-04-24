@@ -18,13 +18,13 @@ export class NewCaseComponent implements OnInit {
   constructor(private route: ActivatedRoute, private appRepoService: AppRepoService, private router: Router) {}
 
   ngOnInit(): void {
-    this.cityId = this.route.snapshot.queryParams["cityid"];
+    this.cityId = this.appRepoService.cityId;
   }
 
   async create() {
     if (typeof this.cityId == "undefined") alert("Error! Unable to create the use case.");
     this.useCase.cityId = this.cityId;
     await this.appRepoService.createUseCase(this.useCase);
-    this.router.navigate(['/authorized/select-case'], { queryParams: { cityid: `${this.cityId}` } });
+    this.router.navigate(['/authorized/select-case']);
   }
 }

@@ -18,7 +18,7 @@ export class SelectCaseComponent implements OnInit {
   constructor(private appRepoService: AppRepoService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.cityId = this.route.snapshot.queryParams["cityid"];
+    this.cityId = this.appRepoService.cityId;
     this.getUseCaseByCityId();
   }
 
@@ -33,17 +33,17 @@ export class SelectCaseComponent implements OnInit {
     if (result) {
       await this.appRepoService
       .deleteUseCase(this.rbSelected);
-    location.reload();
+      this.getUseCaseByCityId();
     }    
   }
-
+  
   redirectToEdit() {
     if (typeof this.rbSelected === "undefined") {
       alert("Please select a use case.");
     } else {
       var useCaseId = this.rbSelected;
       console.log(this.rbSelected);
-      this.router.navigate(['/authorized/edit-case'], { queryParams: { id: `${this.rbSelected}`, cityid: `${this.cityId}` } });
+      this.router.navigate(['/authorized/edit-case'], { queryParams: { id: `${this.rbSelected}`}});
     }
   }
 }

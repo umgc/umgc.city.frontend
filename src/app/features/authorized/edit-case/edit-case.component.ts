@@ -23,7 +23,7 @@ export class EditCaseComponent implements OnInit {
 
   ngOnInit(): void {
     this.useCaseId = this.route.snapshot.queryParams["id"];
-    this.cityId = this.route.snapshot.queryParams["cityid"];
+    this.cityId = this.appRepoService.cityId;
     this.getUseCase();
   }
 
@@ -39,10 +39,10 @@ export class EditCaseComponent implements OnInit {
   async edit() {
     //delete use case
     await this.appRepoService.editUseCase(this.useCase);
-    this.router.navigate(['/authorized/select-case'], { queryParams: { cityid: `${this.cityId}` } });
+    this.router.navigate(['/authorized/select-case']);
   }
 
   cancel() {
-    this.router.navigate(['/authorized/select-case'], { queryParams: { cityid: `${this.cityId}` } });
+    this.router.navigate(['/authorized/select-case']);
   }
 }
