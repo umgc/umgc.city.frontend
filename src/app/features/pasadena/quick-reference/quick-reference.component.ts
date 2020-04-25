@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatCardModule} from '@angular/material/card';
 import { MatDialogRef } from "@angular/material/dialog";
-import {MatTooltipModule} from '@angular/material/tooltip';
+
 
 @Component({
   selector: 'app-quick-reference',
@@ -10,7 +9,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 })
 export class QuickReferenceComponent implements OnInit {
 
-  constructor( public dialogRef: MatDialogRef<QuickReferenceComponent>,) { }
+  constructor( public dialogRef: MatDialogRef<QuickReferenceComponent> ) { }
 
   ngOnInit(): void {
   }

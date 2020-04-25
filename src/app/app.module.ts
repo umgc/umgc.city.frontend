@@ -59,7 +59,6 @@ import { Ng2PanZoomModule } from 'ng2-panzoom';
     NgbModule,
     BrowserAnimationsModule,
     MatExpansionModule,
-    MatToolbarModule,
     MatMenuModule,
     MatDialogModule,
     MatButtonModule,
@@ -69,8 +68,13 @@ import { Ng2PanZoomModule } from 'ng2-panzoom';
     
   ],
   exports: [MatButtonModule, MatDialogModule],
-  entryComponents: [MapKeyDialogComponent, MapZoneDialogComponent],
+  entryComponents: [MapKeyDialogComponent, MapZoneDialogComponent, QuickReferenceComponent],
   bootstrap: [AppComponent],
-  providers: [MapService]
+  providers: [
+    {
+      provide: MatDialogRef,
+      useValue: {}
+    },
+    MapService],
 })
 export class AppModule {}

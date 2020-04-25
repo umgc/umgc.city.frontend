@@ -19,7 +19,7 @@ import { Subscription } from 'rxjs';
 export class PasadenaComponent {
   mapKeyDialogRef: MatDialogRef<MapKeyDialogComponent>;
   mapZoneDialogRef: MatDialogRef<MapZoneDialogComponent>;
-  mapReferenceDialogRef: MatDialogRef<QuickReferenceComponent>;
+  quickReferenceDialogRef: MatDialogRef<QuickReferenceComponent>;
   zoneShapes: any = (mapData as any).default;
   zoneShape: MapShape;
   pasadenaZone: PasadenaZone;
@@ -40,7 +40,6 @@ export class PasadenaComponent {
   public initialZoomWidth = this.canvasWidth;
   public initialised = false;
   public scale = this.getCssScale(this.panzoomConfig.initialZoomLevel);
-  private isMobile = false;
 
   
   constructor(private dialog: MatDialog, private mapService: MapService,
