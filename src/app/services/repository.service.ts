@@ -18,7 +18,7 @@ export class AppRepoService {
   private loggedInToken = "sure I am logged in";
   private loggedInTokenExpires: _m.Moment;
   private httpOptions: any;
-  private apiURL = "api/city-zoning-project-management/";
+  private apiURL = "api/city-zoning-project-management";
 
   knownUseCases: { caseid: string; usesCases: UseCase[] } = {} as any;
   cityId: string;
