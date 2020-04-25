@@ -28,4 +28,11 @@
 #map-legend-button {
     margin-right: 3% !important;
     margin-left: 2%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+#map-reference-button {
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
