@@ -30,6 +30,7 @@ import { UploadCaseComponent } from "./features/authorized/upload-case/upload-ca
 import { MapService } from './services/map.service';
 import { QuickReferenceComponent } from './features/pasadena/quick-reference/quick-reference.component';
 import { ChatModule } from "./features/chat/chat.module";
+import { Ng2PanZoomModule } from 'ng2-panzoom';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +48,7 @@ import { ChatModule } from "./features/chat/chat.module";
     SelectCaseComponent,
     EditCaseComponent,
     UploadCaseComponent,
-    QuickReferenceComponent,
+    QuickReferenceComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +65,8 @@ import { ChatModule } from "./features/chat/chat.module";
     MatButtonModule,
     MatCardModule,
     MatTooltipModule,
+    Ng2PanZoomModule
+    
   ],
   exports: [MatButtonModule, MatDialogModule],
   entryComponents: [MapKeyDialogComponent, MapZoneDialogComponent],
