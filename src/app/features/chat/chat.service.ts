@@ -18,8 +18,11 @@ export class ChatService {
   readonly client = new ApiAiClient({ accessToken: this.token });
 
   conversation = new BehaviorSubject<Message[]>([]);
+  uiSystem = environment.uiwatsonibm;
 
-  constructor() {}
+  constructor() {
+    window["uiSystem"] = this.uiSystem;
+  }
 
   //Add message to source
   update(msg: Message) {

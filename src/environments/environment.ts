@@ -1,6 +1,8 @@
 export const environment = {
-  production: false,
-  zoningJavaService: 'http://localhost:5000/city-zoning-project-management/pasadena/zones/',
-  apiBaseUrl: 'http://localhost:5000/city-zoning-project-management'
+  apiBaseUrl: "http://localhost:5000/city-zoning-project-management",
+  production: true,
+  uiwatsonibm: false,
+  dialogflow: {
+    umgcBot: "a22e33de886a49a299353446e2c7dca3",
+  },
 };
-

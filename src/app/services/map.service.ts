@@ -10,7 +10,7 @@ import { MapShape } from "../models/map-shape";
   providedIn: "root",
 })
 export class MapService {
-  private apiURL = environment.zoningJavaService;
+  private apiURL = "api/city-zoning-project-management/pasadena/zones/";
   private zoneSymbol: string;
   private mapZoneShapeList: MapShape[];
 

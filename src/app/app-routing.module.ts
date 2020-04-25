@@ -9,6 +9,7 @@ import {
 } from "./features";
 import { PasadenaComponent } from "./features";
 import { CanLoadAdminSection } from "./services/can-load-admin.service";
+import { ChatComponent } from "./features/chat/chat.component";
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: "pasadena",
     component: PasadenaComponent,
+  },
+  {
+    path: "chat-demo",
+    component: ChatComponent,
   },
   {
     path: "authorized",

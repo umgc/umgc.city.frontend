@@ -11,7 +11,7 @@ WORKDIR /ng-app
 
 COPY . ./
 
-RUN npm run ng build --prod --output-path=dist
+RUN npm run build-prod
 
 FROM nginx:alpine
 
