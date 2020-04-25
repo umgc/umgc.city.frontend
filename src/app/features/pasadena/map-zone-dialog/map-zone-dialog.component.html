@@ -1,17 +1,16 @@
-<h2 mat-dialog-title>Zoning Area: {{ data.codeLabel }}</h2>
+<h1 mat-dialog-title>Zoning Area: {{ data.codeLabel }}</h1>
 <mat-dialog-content>
-    <h3>Base Zone: {{ data.baseCode }}</h3>
-    <h4>{{ data.baseCodeDescription }}</h4>
+    <p class="bold-text">Base Zone: {{ data.baseCode }}</p>
+    <p>{{ data.baseCodeDescription }}</p>
     <div *ngIf="data.overlayCode">
-        <h3>Overlay Zone: {{ data.overlayCode }}</h3>
-        <h4>{{ data.overlayCodeDescription }}</h4>
+        <p class="bold-text">Overlay Zone: {{ data.overlayCode }}</p>
+        <p>{{ data.overlayCodeDescription }}</p>
     </div>
     <hr>
-    <h3>General Requirements for Development and New Land Uses</h3>
-    <br>
+    <p class='bold-text'>General Requirements for Development and New Land Uses</p>
     <a href="https://library.municode.com/ca/pasadena/codes/code_of_ordinances?nodeId=TIT17_ZONING_CODE_ART2ZODIALLAUSZOECST_CH17.21DELAUSAPRE_17.21.030ALLAUSPERE">Allowable Land Uses and Permits</a>
-    <br>
-    <p>Base Zone: {{ data.baseCode }}</p>
+    <br><br>
+    <p class='bold-text'>Base Zone: {{ data.baseCode }}</p>
     <a href="{{ data.baseGeneralStandardsURL }}">General Development Standards</a>
     <br>
     <div *ngIf="data.baseAdditionalStandardsURL">
@@ -24,10 +23,10 @@
     </div>
     <div *ngIf="data.baseFrontageAndFacadesStandards">
         <a href="{{ data.baseFrontageAndFacadesStandards }}">Frontage and Facades Standards</a>
-        <br>
+        <br><br>
     </div>
     <div *ngIf="data.overlayCode">
-        <p>Overlay Zone: {{ data.overlayCode }}</p>
+        <p class='bold-text'>Overlay Zone: {{ data.overlayCode }}</p>
         <a href="{{ data.overlayGeneralStandardsURL }}">General Development Standards</a>
         <br>
         <div *ngIf="data.overlayAdditionalStandardsURL">
@@ -45,5 +44,5 @@
     </div>
 </mat-dialog-content>
 <mat-dialog-actions>
-    <button class="mat-raised-button" (click)="closeDialog">Close</button>
+    <button mat-raised-button color="primary" (click)="closeDialog()">Close</button>
 </mat-dialog-actions>

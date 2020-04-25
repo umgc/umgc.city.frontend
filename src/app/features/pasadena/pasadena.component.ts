@@ -6,6 +6,7 @@ import { PasadenaZone } from "../../models/pasadenaZone";
 import { MapShape } from "../../models/map-shape";
 import * as mapData from "./map-data.json";
 import { MapService } from 'src/app/services/map.service';
+import { QuickReferenceComponent } from './quick-reference/quick-reference.component';
 
 @Component({
   selector: "app-pasadena",
@@ -15,6 +16,7 @@ import { MapService } from 'src/app/services/map.service';
 export class PasadenaComponent {
   mapKeyDialogRef: MatDialogRef<MapKeyDialogComponent>;
   mapZoneDialogRef: MatDialogRef<MapZoneDialogComponent>;
+  mapReferenceDialogRef: MatDialogRef<QuickReferenceComponent>;
   zoneShapes: any = (mapData as any).default;
   zoneShape: MapShape;
   pasadenaZone: PasadenaZone;
@@ -40,5 +42,14 @@ export class PasadenaComponent {
       console.log(data);
     });      
       }
+
+      openReferenceDialog(){
+        this.dialog.open(QuickReferenceComponent, {
+          hasBackdrop: true,
+          maxWidth: "80%",
+        });
+
+      }
+
     
 }

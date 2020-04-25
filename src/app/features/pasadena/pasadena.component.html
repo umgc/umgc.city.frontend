@@ -2,16 +2,19 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <mat-toolbar>
-                <button mat-raised-button class="btn btn-sm btn-success" (click)="openMapKeyDialog()">
+            <mat-toolbar mat-primary id=toolbar-color>
+                <button mat-raised-button color="primary" id="map-legend-button" (click)="openMapKeyDialog()">
           View Map Legend
         </button>
+                <button mat-raised-button color="primary" id="map-reference-button" (click)="openReferenceDialog()">
+           Quick Reference Guide
+          </button>
             </mat-toolbar>
         </div>
     </div>
     <div class="row">
         <div class="col-12">
-            <div class="noborder-0" style="width: 1510px;">
+            <div class="border border-primary" style="width: 1510px;">
                 <img class="paasadena_img_map border" id="map_interactive" src="/assets/img/Zoning_Map.png" usemap="#imgmap" alt="Map for City of Pasadena Zoning Areas" />
                 <map name="imgmap" id="imgmap">
           <area

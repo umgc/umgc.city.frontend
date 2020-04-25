@@ -1,0 +1,16 @@
+h2 {
+    color: #00275d;
+}
+
+mat-expansion-panel-header {
+    height: 100% !important;
+}
+
+label {
+    color: #00275d !important;
+}
+
+.mat-primary {
+    background-color: #00275d;
+    color: #fff;
+}

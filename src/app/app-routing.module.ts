@@ -9,6 +9,7 @@ import {
 } from "./features";
 import { PasadenaComponent } from "./features";
 import { CanLoadAdminSection } from "./services/can-load-admin.service";
+import { QuickReferenceComponent } from './features/pasadena/quick-reference/quick-reference.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: "pasadena",
     component: PasadenaComponent,
+  },
+  {
+    path:"quickreference",
+    component: QuickReferenceComponent,
   },
   {
     path: "authorized",

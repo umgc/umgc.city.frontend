@@ -15,9 +15,7 @@ export class MapZoneDialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: PasadenaZone) {
   
       console.log('Dialog:');
-      console.log(data);
-      
-     
+      console.log(data);  
   }
 
   ngOnInit() {

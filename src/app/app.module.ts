@@ -11,8 +11,10 @@ import { MatExpansionModule } from "@angular/material/expansion";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatDialogModule, MatDialogRef } from "@angular/material/dialog";
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatButtonModule } from "@angular/material/button";
 import { HttpClientModule } from "@angular/common/http";
+import { MatCardModule } from "@angular/material/card";
 import {
   SigninComponent,
   SignupComponent,
@@ -26,6 +28,7 @@ import { SelectCaseComponent } from "./features/authorized/select-case/select-ca
 import { EditCaseComponent } from "./features/authorized/edit-case/edit-case.component";
 import { UploadCaseComponent } from "./features/authorized/upload-case/upload-case.component";
 import { MapService } from './services/map.service';
+import { QuickReferenceComponent } from './features/pasadena/quick-reference/quick-reference.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +46,7 @@ import { MapService } from './services/map.service';
     SelectCaseComponent,
     EditCaseComponent,
     UploadCaseComponent,
+    QuickReferenceComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +60,8 @@ import { MapService } from './services/map.service';
     MatMenuModule,
     MatDialogModule,
     MatButtonModule,
+    MatCardModule,
+    MatTooltipModule,
   ],
   exports: [MatButtonModule, MatDialogModule],
   entryComponents: [MapKeyDialogComponent, MapZoneDialogComponent],
