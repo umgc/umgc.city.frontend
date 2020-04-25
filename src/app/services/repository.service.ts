@@ -18,7 +18,7 @@ export class AppRepoService {
   private httpOptions: any;
   //private apiURL = environment.apiBaseUrl;
 
-  private apiURL = 'http://localhost:5000/city-zoning-project-management';
+  private apiURL = "api/city-zoning-project-management/";
   knownUseCases: { caseid: string, usesCases: UseCase[] } = {} as any;
  
   constructor(private httpClient: HttpClient) {

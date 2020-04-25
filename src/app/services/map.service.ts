@@ -11,7 +11,7 @@ import { MapShape } from "../models/map-shape";
 })
 export class MapService {
 
- private apiURL = 'http://localhost:5000/city-zoning-project-management';
+ private apiURL = "api/city-zoning-project-management/";;
  private httpOptions: any;
  
  constructor(private httpClient: HttpClient) {
