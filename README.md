@@ -1,4 +1,10 @@
-![Test/Deploy UMGC City Web](https://github.com/umgc/umgc.city.frontend/workflows/Test/Deploy%20UMGC%20City%20Web/badge.svg)
+![Test/Code Coverage UMGC City Web](https://github.com/umgc/umgc.city.frontend/workflows/Test/Code%20Coverage/badge.svg)
+![UMGC CITY CI](https://github.com/umgc/umgc.city.frontend/workflows/Deploy%20Dev%20UMGC%20City%20Web/badge.svg)
+![UMGC CITY CD](https://github.com/umgc/umgc.city.frontend/workflows/Deploy%20Dev%20UMGC%20City%20Web/badge.svg)
+![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=umgc-city-frontend&metric=coverage)
+
+![Sonarcloud Quality](https://sonarcloud.io/api/project_badges/quality_gate?project=umgc-city-frontend)
+
 
 # UMGC City Web App
 
@@ -8,7 +14,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 The application has automated testing hosted through Github Actions ... see .github/workflows for workflow actions.
 
-For Code Coverage Report view the [Sonar Dashboard](https://sonarcloud.io/dashboard?id=umgc_umgc.city.frontend)
+For Code Coverage Report view the [Sonar Dashboard](https://sonarcloud.io/dashboard?id=umgc-city-frontend)
 
 The project is stage at [UMGC Web Staging](https://appdev-umgc-cityweb.herokuapp.com/)
 

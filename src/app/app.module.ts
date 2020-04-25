@@ -29,6 +29,7 @@ import { EditCaseComponent } from "./features/authorized/edit-case/edit-case.com
 import { UploadCaseComponent } from "./features/authorized/upload-case/upload-case.component";
 import { MapService } from './services/map.service';
 import { QuickReferenceComponent } from './features/pasadena/quick-reference/quick-reference.component';
+import { ChatModule } from "./features/chat/chat.module";
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +52,7 @@ import { QuickReferenceComponent } from './features/pasadena/quick-reference/qui
   imports: [
     BrowserModule,
     HttpClientModule,
+    ChatModule,
     AppRoutingModule,
     FormsModule,
     NgbModule,

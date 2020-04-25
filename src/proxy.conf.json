@@ -4,8 +4,6 @@
     "secure": false,
     "changeOrigin": true,
     "logLevel": "debug",
-    "protocol": "https:",
-    "port": 443,
     "pathRewrite": {
       "^/api": ""
     }

@@ -1,27 +1,15 @@
-import {
-  Component,
-  OnInit,
-  Input,
-  AfterViewInit,
-  ViewChild,
-  ViewChildren,
-  QueryList,
-  ElementRef,
-} from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ChatService, Message } from "../chat.service";
 import { Observable } from "rxjs";
 import { scan } from "rxjs/operators";
-import { Router } from "@angular/router";
 
 @Component({
-  selector: "chat-dialog",
+  selector: "app-chat-dialog",
   templateUrl: "./chat-dialog.component.html",
   styleUrls: ["./chat-dialog.component.css"],
 })
 export class ChatDialogComponent implements OnInit {
-  // Random session ID
-  sessionId = Math.random().toString(36).slice(-5);
-
+  uiSystem: any;
   //Getting the current date and time
   todayNumber: number = Date.now();
   todayDate: Date = new Date();

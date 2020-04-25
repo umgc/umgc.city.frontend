@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { UserSignData } from "src/app/models";
 import { AppRepoService } from "src/app/services/repository.service";
 import { Router } from "@angular/router";
+import Swal from "sweetalert2";
 
 @Component({
   selector: "app-signin",
@@ -21,8 +22,15 @@ export class SigninComponent implements OnInit {
     let wasSignSuccessful: boolean;
 
     if (this.signInData.email == "comtest@me.com") {
-      const testResult = await this.repoService.commTest();
-      alert(testResult);
+      try {
+        const testResult = await this.repoService.commTest();
+        Swal.fire("Comm Test Message", testResult, "success");
+      } catch (e) {
+        console.log(e);
+        Swal.fire("Comm Test Message", e, "error");
+      } finally {
+        this.isSigningIn = false;
+      }
       return;
     }
 
@@ -32,7 +40,8 @@ export class SigninComponent implements OnInit {
       this.isSigningIn = false;
     }
     if (!wasSignSuccessful) {
-      // need to show an error dialog;
+      Swal.fire("Invalid Login", "The user credentials are invalid", "error");
+      return;
     }
     if (this.signInData.rememberMeFlag) {
       localStorage.setItem("persistedEmail", this.signInData.email);
@@ -40,5 +49,9 @@ export class SigninComponent implements OnInit {
       localStorage.removeItem("persistedEmail");
     }
     this.router.navigateByUrl("/authorized/landing");
+  }
+
+  cancel() {
+    this.router.navigate(["/home"]);
   }
 }

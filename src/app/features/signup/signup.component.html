@@ -1,5 +1,3 @@
-<p>signup works!</p>
-<br />
 <form>
   <div class="jumbotron">
     <h1>{{ title }}</h1>
@@ -48,8 +46,8 @@
       class="form-control"
       id="lastName"
       placeholder="Doe"
-      name="lastnName"
-      [(ngModel)]="newUser.lastnName"
+      name="lastName"
+      [(ngModel)]="newUser.lastName"
     />
   </div>
   <div class="form-group">
@@ -61,8 +59,8 @@
       required
       aria-describedby="emailHelp"
       placeholder="Example@gmail.com"
-      name="emailAddress"
-      [(ngModel)]="newUser.emailAddress"
+      name="email"
+      [(ngModel)]="newUser.email"
     />
   </div>
   <div class="form-group">
@@ -79,9 +77,17 @@
   </div>
   <br />
   <button (click)="submitNewUser()" class="btn btn-primary">Submit</button>
-  <span><button type="submit" class="btn btn-warning">Cancel</button></span>
+  <span
+    ><button (click)="cancel()" type="submit" class="btn btn-warning">
+      Cancel
+    </button></span
+  >
   <br />
   <br />
   <p>Already have an account?<a routerLink="/signin">&nbsp; Sign-In</a></p>
 </form>
 <br />
+
+<footer>
+  <p>&copy; 2020, UMGC City Team 1</p>
+</footer>
