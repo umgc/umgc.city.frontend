@@ -9,6 +9,8 @@ import { MapService } from 'src/app/services/map.service';
 import { QuickReferenceComponent } from './quick-reference/quick-reference.component';
 import { PanZoomConfig, PanZoomAPI, PanZoomModel } from 'ng2-panzoom';
 import { Subscription } from 'rxjs';
+import { NONE_TYPE } from '@angular/compiler';
+import { MAT_RIPPLE_GLOBAL_OPTIONS } from '@angular/material/core';
 
 @Component({
   selector: "app-pasadena",
@@ -61,7 +63,6 @@ export class PasadenaComponent {
 
   openMapKeyDialog() {
     this.dialog.open(MapKeyDialogComponent, {
-      hasBackdrop: true,
       maxWidth: "30%",
     });
   }
@@ -71,15 +72,17 @@ export class PasadenaComponent {
     let response = this.mapService.getZoneData(this.zoneShape)
     response.subscribe((data: PasadenaZone) => {
       this.pasadenaZone = data;
-      this.dialog.open(MapZoneDialogComponent, { data: this.pasadenaZone});
+      this.dialog.open(MapZoneDialogComponent, { data: this.pasadenaZone}
+      );
       console.log(data);
     });      
       }
 
       openReferenceDialog(){
         this.dialog.open(QuickReferenceComponent, {
-          hasBackdrop: true,
+          hasBackdrop: false,
           maxWidth: "80%",
+          panelClass: 'dialog-class'
         });
 
       }
