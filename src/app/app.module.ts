@@ -4,19 +4,17 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { FormsModule } from "@angular/forms";
-import { PasadenaMapComponent } from "./pages-not-used/pasadena-map/pasadena-map.component";
-import { PasadenaHeaderComponent } from "./layout/pasadena/pasadena-header/pasadena-header.component";
-import { PasadenaFooterComponent } from "./layout/pasadena/pasadena-footer/pasadena-footer.component";
-import { PasadenaLayoutComponent } from "./layout/pasadena/pasadena-layout/pasadena-layout.component";
+import { PasadenaHeaderComponent } from "./features/pasadena/pasadena-header/pasadena-header.component";
+import { PasadenaFooterComponent } from "./features/pasadena/pasadena-footer/pasadena-footer.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatMenuModule } from "@angular/material/menu";
-import { PasadenaMapKeyComponent } from "./pages-not-used/pasadena-map-key/pasadena-map-key.component";
 import { MatDialogModule, MatDialogRef } from "@angular/material/dialog";
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatButtonModule } from "@angular/material/button";
 import { HttpClientModule } from "@angular/common/http";
-import { PasadenaZoneComponent } from "./pages-not-used/pasadena-zone/pasadena-zone.component";
+import { MatCardModule } from "@angular/material/card";
 import {
   SigninComponent,
   SignupComponent,
@@ -29,7 +27,10 @@ import { NewCaseComponent } from "./features/authorized/new-case/new-case.compon
 import { SelectCaseComponent } from "./features/authorized/select-case/select-case.component";
 import { EditCaseComponent } from "./features/authorized/edit-case/edit-case.component";
 import { UploadCaseComponent } from "./features/authorized/upload-case/upload-case.component";
+import { MapService } from './services/map.service';
+import { QuickReferenceComponent } from './features/pasadena/quick-reference/quick-reference.component';
 import { ChatModule } from "./features/chat/chat.module";
+import { Ng2PanZoomModule } from 'ng2-panzoom';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,12 +39,8 @@ import { ChatModule } from "./features/chat/chat.module";
     HomeComponent,
     SigninComponent,
     SignupComponent,
-    PasadenaMapComponent,
     PasadenaHeaderComponent,
     PasadenaFooterComponent,
-    PasadenaLayoutComponent,
-    PasadenaMapKeyComponent,
-    PasadenaZoneComponent,
     SigninComponent,
     SignupComponent,
     PasadenaComponent,
@@ -51,6 +48,7 @@ import { ChatModule } from "./features/chat/chat.module";
     SelectCaseComponent,
     EditCaseComponent,
     UploadCaseComponent,
+    QuickReferenceComponent
   ],
   imports: [
     BrowserModule,
@@ -61,13 +59,22 @@ import { ChatModule } from "./features/chat/chat.module";
     NgbModule,
     BrowserAnimationsModule,
     MatExpansionModule,
-    MatToolbarModule,
     MatMenuModule,
     MatDialogModule,
     MatButtonModule,
+    MatCardModule,
+    MatTooltipModule,
+    Ng2PanZoomModule
+    
   ],
   exports: [MatButtonModule, MatDialogModule],
-  entryComponents: [MapKeyDialogComponent, MapZoneDialogComponent],
+  entryComponents: [MapKeyDialogComponent, MapZoneDialogComponent, QuickReferenceComponent],
   bootstrap: [AppComponent],
+  providers: [
+    {
+      provide: MatDialogRef,
+      useValue: {}
+    },
+    MapService],
 })
 export class AppModule {}

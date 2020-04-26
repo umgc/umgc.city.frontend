@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { MatDialogRef } from "@angular/material/dialog";
 
 @Component({
@@ -6,7 +6,7 @@ import { MatDialogRef } from "@angular/material/dialog";
   templateUrl: "./map-key-dialog.component.html",
   styleUrls: ["./map-key-dialog.component.css"],
 })
-export class MapKeyDialogComponent {
+export class MapKeyDialogComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<MapKeyDialogComponent>) {}
 
   ngOnInit() {}

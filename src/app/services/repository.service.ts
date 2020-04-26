@@ -2,13 +2,10 @@ import { Injectable } from "@angular/core";
 import {
   HttpClient,
   HttpHeaders,
-  HttpEvent,
-  HttpResponse,
 } from "@angular/common/http";
 import * as _m from "moment";
 import { UserSignData } from "../models";
 import { UseCase } from "../models/useCase";
-import { environment } from "../../environments/environment.prod";
 import { NewUser } from "../models/newUser";
 
 @Injectable({

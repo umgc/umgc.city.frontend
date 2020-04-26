@@ -1,0 +1,18 @@
+body {
+    margin: auto;
+    background-color: #ffffff;
+}
+
+footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin: auto;
+    width: 100%;
+}
+
+.mat-toolbar-row {
+    background-color: #ffffff;
+    color: white;
+}

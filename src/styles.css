@@ -1,5 +1,11 @@
 @import '~bootstrap/dist/css/bootstrap.css';
-html,
+@import 'font-awesome/css/font-awesome.min.css';
+:-webkit-full-screen,
+-moz-full-screen,
+fullscreen {
+    background-color: #FFFF;
+}
+
 body {
     height: 100%;
 }

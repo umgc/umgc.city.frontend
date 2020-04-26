@@ -9,6 +9,7 @@ import {
 } from "./features";
 import { PasadenaComponent } from "./features";
 import { CanLoadAdminSection } from "./services/can-load-admin.service";
+import { QuickReferenceComponent } from './features/pasadena/quick-reference/quick-reference.component';
 import { ChatComponent } from "./features/chat/chat.component";
 
 const routes: Routes = [
@@ -38,9 +39,13 @@ const routes: Routes = [
     component: PasadenaComponent,
   },
   {
+    path:"quickreference",
+    component: QuickReferenceComponent,
+  },
+  {
     path: "chat-demo",
     component: ChatComponent,
-  },
+},
   {
     path: "authorized",
     loadChildren: () =>
@@ -50,28 +55,6 @@ const routes: Routes = [
     canLoad: [CanLoadAdminSection],
   },
 ];
-
-// const routes: Routes = [
-//   {
-//     path: '',
-//     component: PasadenaLayoutComponent,
-//     children: [
-//       { path: '', component: LandingPageComponent, pathMatch: 'full'},
-//     ]
-//   },
-//   {
-//     path: '',
-//     component: AuthorizedLayoutComponent,
-//     children: [
-//       { path: 'home', component: HomeComponent},
-//       { path: 'signin', component: SignInComponent },
-//       { path: 'signup', component: SignUpComponent},
-//       { path: 'usecase/upload', component: UploadUsecaseComponent},
-//       { path: 'help', component: HelpComponent},
-//       { path: 'usecase/new', component: NewUsecaseComponent},
-//       { path: 'welcome', component: WelcomeComponent}
-//     ]
-//   }
 
 @NgModule({
   imports: [RouterModule.forRoot(routes), BrowserModule],
