@@ -64,6 +64,8 @@ export class PasadenaComponent {
   openMapKeyDialog() {
     this.dialog.open(MapKeyDialogComponent, {
       maxWidth: "30%",
+      hasBackdrop: true,
+      panelClass: 'dialog-class'
     });
   }
 
@@ -72,7 +74,8 @@ export class PasadenaComponent {
     let response = this.mapService.getZoneData(this.zoneShape)
     response.subscribe((data: PasadenaZone) => {
       this.pasadenaZone = data;
-      this.dialog.open(MapZoneDialogComponent, { data: this.pasadenaZone}
+      this.dialog.open(MapZoneDialogComponent, { data: this.pasadenaZone, 
+      hasBackdrop: true, panelClass: 'dialog-class'}
       );
       console.log(data);
     });      
@@ -80,7 +83,7 @@ export class PasadenaComponent {
 
       openReferenceDialog(){
         this.dialog.open(QuickReferenceComponent, {
-          hasBackdrop: false,
+          hasBackdrop: true,
           maxWidth: "80%",
           panelClass: 'dialog-class'
         });

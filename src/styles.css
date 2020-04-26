@@ -16,7 +16,7 @@ body {
 }
 
 .dialog-class {
-    background-color: black;
+    background-color: #FFFF;
 }
 
 .noselect {
@@ -36,4 +36,5 @@ body {
 
 .cdk-overlay-container {
     z-index: 9999 !important;
+    position: absolute;
 }
