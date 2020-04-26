@@ -44,3 +44,7 @@ tile {
     width: 100%;
     position: fixed;
 }
+
+.cdk-overlay-container {
+    z-index: 9999 !important;
+}
